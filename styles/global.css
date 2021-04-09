@@ -1,0 +1,49 @@
+/*CSS Geral*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+/*CSS Da Pagina de Loading */
+.loadingcustom{
+  display: block;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+
+.img-loading{
+  display: flex;
+  margin: auto;
+  width: 300px;
+  height: 300px;
+}
+.text-loading{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 40px;
+}
+
+/*CSS da Pagina do Menu*/
+.button-stages{
+  font-family: 'Press Start 2P', cursive;
+  padding: 1rem 1.25rem;
+  font-size: 1.5rem;
+  letter-spacing: .25rem;
+  box-shadow: 2px 2px 0px 1px #4a4c69;
+  text-transform: uppercase;
+  background-color: #2791ff;
+  border: none;
+  border-radius: .75rem;
+  color: #fff;
+}
+
+.button-stages:hover{
+  background-color: #d82b00;
+  box-shadow: 2px 2px 0px 1px #b58a8a;
+}
