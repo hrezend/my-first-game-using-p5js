@@ -22,6 +22,8 @@ let imageEnemyTrollTiktok;
 let imageEnemyTrollTwitter;
 let imageEnemyTrollYoutube;
 let imageEnemyTrollInstagram;
+let imageEnemyTrollSpotify;
+let imageEnemyTrollSnapchat;
 
 let imageMarkerProgressZumbi;
 let imageMarkerBrain;

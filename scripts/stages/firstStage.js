@@ -37,12 +37,16 @@ class FirstStage{
         const troll_youtube = new Enemy(matriz_troll, imageEnemyTrollYoutube, width, -20, 400, 400, 400, 400, 20);
         const troll_instagram = new Enemy(matriz_troll, imageEnemyTrollInstagram, width, -20, 400, 400, 400, 400, 25);
         const troll_twitter = new Enemy(matriz_troll, imageEnemyTrollTwitter, width, -20, 400, 400, 400, 400, 20);
+        const troll_snapchat = new Enemy(matriz_troll, imageEnemyTrollSnapchat, width, -20, 400, 400, 400, 400, 20);
+        const troll_spotify = new Enemy(matriz_troll, imageEnemyTrollSpotify, width, -20, 400, 400, 400, 400, 20);
         enemies.push(thief);
         enemies.push(troll_facebook);
         enemies.push(troll_tiktok);
         enemies.push(troll_youtube);
         enemies.push(troll_instagram);
         enemies.push(troll_twitter);
+        enemies.push(troll_spotify);
+        enemies.push(troll_snapchat);
 
         randomEnemy = Math.floor(Math.random() * enemies.length);
     }
