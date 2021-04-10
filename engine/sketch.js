@@ -2,11 +2,13 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(30);
 
-  menu = new Menu();
+  newGame = new NewGame();
   firstStage = new FirstStage();
+  secondStage = new SecondStage();
 
-  sceneries = {menu, firstStage};
-  menu.setup();
+  newGame.setup();
+
+  sceneries = {newGame, firstStage, secondStage};
 }
 
 function keyPressed(){

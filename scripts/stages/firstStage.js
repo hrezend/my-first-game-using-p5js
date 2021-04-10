@@ -1,14 +1,14 @@
 class FirstStage{
-    keyPressed(key){
-        if(keyCode === 38 || key === 'w'){
+    keyPressed(){
+        if(keyCode === 32){ //Space
             myHero[0].jump();
         }
-        if(keyCode === 32 || key === ' '){
+        if(keyCode === 84){ //KeyT
             myHero[0].transform();
         }
-        if(keyCode === 40 || key === 's'){
-            if(myHero[0].amountJumps == 0){
-                myHero[0].slip();
+        if(key === 'ArrowRight') {
+            if(books.amount != 0) {
+                myHero[currentHero].attack();
             }
         }
     }
@@ -23,13 +23,6 @@ class FirstStage{
         firstStageSceneryParalax = new Scenery(imagefirstStageParalax, 4);
         firstStageSceneryBackground = new Scenery(imagefirstStageBackground, 7);
         firstStageSceneryPoste = new Scenery(imagefirstStagePoste, 8)
-
-        myHeroRunning = new Hero(matriz_hero_running, imageHeroRun, 0, 20, 175, 200, 251, 324);
-        myHeroJumping = new Hero(matriz_hero_jumping, imageHeroJump, 0, 20, 175, 200, 240, 240);
-        myHeroPower = new Hero(matriz_hero_power, imageHeroPower, 0, 20, 100, 100, 170, 170);
-        myHero.push(myHeroRunning);
-        myHero.push(myHeroJumping);
-        myHero.push(myHeroPower);
 
         const thief = new Enemy(matriz_thief, imageEnemyThief, width, 10, 190, 230, 350, 420, 60);
         const troll_facebook = new Enemy(matriz_troll, imageEnemyTrollFacebook, width, -20, 400, 400, 400, 400, 25);
@@ -52,6 +45,7 @@ class FirstStage{
     }
 
     draw(){
+        //Mostra o cenario em tela
         firstStageScenerySun.show();
         firstStageSceneryParalax.show();
         firstStageSceneryBackground.show();
@@ -59,32 +53,59 @@ class FirstStage{
         firstStageSceneryParalax.move();
         firstStageSceneryBackground.move();
 
+        //Mostra o inimigo em tela
         currentEnemy = enemies[randomEnemy];
         currentEnemy.show();
         currentEnemy.move();
 
+        //Assim que um inimigo fica visivel, outro eh escolhido para ser o proximo
         if(currentEnemy.visible()){
             randomEnemy = Math.floor(Math.random() * enemies.length);
             currentEnemy.nextEnemy();
         }
 
+        //Mostra o sprite atual do heroi
         if(myHero[0].amountJumps < 2){
             myHero[currentHero].show();
         }
         myHero[0].float();
 
+        //Faz o lançamento das balas
+        for (let i = 0; i < bulletsOfBooks.length; i++) {
+            let blt = bulletsOfBooks[i];
+            let xPosBullet = bulletsOfBooks[i].centerX;
+            if (xPosBullet > width) {
+                bulletsOfBooks.splice(i, 1);
+            }
+            if (currentEnemy.hited(blt)) {
+                currentEnemy.hide();
+                soundEnemyHited.play();
+                score.incrementPoints(30);
+                bulletsOfBooks.splice(i, 1)
+            }
+            blt.show();
+        }
+
+        //Mostra as artes dos postes (depois do heroi, para dar o efeito de que o heroi passa por tras dos postes)
         firstStageSceneryPoste.show();
         firstStageSceneryPoste.move();
 
-        score.show();
-        score.incrementPoints();
+        //Mostra os livros (balas) em tela
+        books.draw();
 
+        //Mostra o score em tela
+        score.show();
+        score.incrementPoints(0.5);
+
+        //Verifica se o nosso heroi esta colidindo com um inimigo
         if(myHero[currentHero].colliding(currentEnemy)){
-            myHero[currentHero].invincibility();
-            setTimeout(() => {
-                myHero[currentHero].invincibility();
-            }, 5000);
             score.decrementPoints();
+        }
+
+        //Muda de fase quando a pontuacao chega a 1000
+        if(score.points >= 1000){
+            currentScenery = 'secondStage';
+            sceneries[currentScenery].setup();
         }
     }
 }

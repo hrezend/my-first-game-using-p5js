@@ -6,14 +6,18 @@ class Hero extends Animation{
         this.y = this.baseY;
         this.gravity = 3;
         this.speedJump = 0;
-        this.heightJump = 37;
+        this.heightJump = 33;
         this.amountJumps = 0;
         this.invencible = false;
-        this.collected = false;
+    }
+
+    attack(){
+        bulletsOfBooks.push(new BulletsOfBooks(this.x, this.y + 50, 10, 3, 25));
+        books.decrementAmount();
+        soundCasting.play();
     }
 
     jump(){
-        flagJumping = true;
         if(this.amountJumps < 2){
             soundJump.play();
             this.speedJump =- this.heightJump;
@@ -21,26 +25,8 @@ class Hero extends Animation{
         }
     }
 
-    slip(){
-        myHero[1].x = myHero[0].x;
-        myHero[1].y = height - myHero[0].heightOfSprit - myHero[0].variationY;
-        myHero[1].show();
-        currentHero = 1;
-        flagSliping = true;
-        soundSlip.play();
-        setTimeout(() => {
-            flagSliping = false;
-        }, 1000);
-    }
-
     float(){
-        if(this.amountJumps > 0 && flagTransformed){
-            myHero[2].x = myHero[0].x;
-            myHero[2].y = myHero[0].y;
-            myHero[2].show();
-            currentHero = 2;
-        }
-        else if(this.amountJumps == 2){
+        if(this.amountJumps == 2){
             myHero[1].x = myHero[0].x;
             myHero[1].y = myHero[0].y;
             myHero[1].show();
@@ -53,46 +39,14 @@ class Hero extends Animation{
         if(this.y > this.baseY){
             this.y = this.baseY;
             this.amountJumps = 0;
-            this.invencible = false;
-
-            if(flagSliping == false && this.invencible == false){
-                currentHero = 0;
-                flagJumping = false;
-                flagTransformed = false; 
-            }
-        }
-    }
-
-    invincibility(){
-        this.invencible = !this.invencible;
-    }
-
-    collecting(){
-        this.collected = true;
-        setTimeout(() => {
-            this.collected = false;
-        }, 5000);
-    }
-
-    transform(){
-        flagTransformed = !flagTransformed;
-        
-        if(flagJumping && !this.invencible){
-            soundEletric.play();
-            myHero[2].x = myHero[currentHero].x;
-            myHero[2].y = myHero[currentHero].y;
-            myHero[2].show();
-            currentHero = 2;
-            this.invincibility();
-            setTimeout(() => {
-                currentHero = 0;
-                flagTransformed = false;
-                this.invincibility();
-            }, 1000);
+            currentHero = 0;
         }
     }
 
     colliding(enemy){
+        if(this.invencible){
+            return false;
+        }
         //let LinhaCincoBaixoPraCima = line(this.x + 80, this.y + 40, this.x + 160, this.y + 40);
         //let LinhaQuatroBaixoPraCima = line(this.x + 30, this.y + 80, this.x + 160, this.y + 80);
         //let LinhaTresBaixoPraCima = line(this.x + 20, this.y + 120, this.x + 150, this.y + 120);
@@ -129,10 +83,6 @@ class Hero extends Animation{
         let hit18 = collideLineLine(this.x + 80, this.y + 40, this.x + 160, this.y + 40, enemy.x + 200, enemy.y + 80, enemy.x + 200, enemy.y + 340);
         let hit19 = collideLineLine(this.x + 80, this.y + 40, this.x + 160, this.y + 40, enemy.x + 300, enemy.y + 80, enemy.x + 300, enemy.y + 340);
         let hit20 = collideLineLine(this.x + 80, this.y + 40, this.x + 160, this.y + 40, enemy.x + 350, enemy.y + 80, enemy.x + 350, enemy.y + 340);
-
-        if(this.invencible){
-            return false;
-        }
         
         if(hit1 || hit2 || hit3 || hit4 || hit5 || hit6 || hit7 || hit8 || hit9 || hit10 || hit11 || hit12 || hit13 || hit14 || hit15 || hit16 || hit17 || hit18 || hit19 || hit20){
             return true;

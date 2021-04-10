@@ -10,6 +10,7 @@ class Punctuation{
         let progress = map(this.points, 0, 1000, 10, width);
 
         if(this.points < 300){
+            strokeWeight(0);
             fill(255,0,0);
             rect(0, position, progress, 10, 0);
             noFill();
@@ -17,6 +18,7 @@ class Punctuation{
             image(imageMarkerProgressZumbi, progress - 30, height - 50, 50, 50);
         }
         else if(this.points > 300 && this.points < 900){
+            strokeWeight(0);
             fill(0,255,0);
             rect(0, position, progress, 10, 0);
             noFill();
@@ -24,6 +26,7 @@ class Punctuation{
             image(imageMarkerBrain, progress - 30, height - 45, 50, 50);
         }
         else if(this.points > 900){
+            strokeWeight(0);
             fill(0,255,255);
             rect(0, position, progress, 10, 0);
             noFill();
@@ -31,9 +34,9 @@ class Punctuation{
             image(imageMarkerEistein, progress - 35, height - 45, 50, 50);
         }
     }
-    incrementPoints(){
-        if(this.points < 1000){
-            this.points = this.points + 0.5;
+    incrementPoints(value){
+        if((this.points+value) < 1000){
+            this.points = this.points + value;
         }
     }
     decrementPoints(){

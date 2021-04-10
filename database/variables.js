@@ -1,20 +1,28 @@
 let lettersFont;
+let font2;
 
 let soundJump;
-let soundAttack;
 let soundMenu;
 let soundGame;
-let soundSlip;
 let soundEletric;
+let soundCasting;
+let soundEnemyHited;
 
 let imagefirstStageSun;
 let imagefirstStagePoste
 let imagefirstStageParalax;
 let imagefirstStageBackground;
+
+let imageSecondStageBamboo1;
+let imageSecondStageBamboo2;
+let imageSecondStageBackground;
+let imageSecondStageGrounds;
+
+let imageBook;
+
 let imageMenu;
 let imageHeroRun;
 let imageHeroJump;
-let imageHeroPower;
 
 let imageEnemyThief;
 let imageEnemyTrollFacebook;
@@ -38,16 +46,23 @@ let firstStageSceneryParalax;
 let firstStageSceneryPoste;
 let firstStageScenerySun;
 
+let secondStageBamboo1;
+let secondStageBamboo2;
+let secondStageBackground;
+let secondStageGround;
+
 let score;
 
 let sceneries;
-let currentScenery = 'menu';
+let currentScenery = 'newGame';
 
-let myHero = [];
-let currentHero = 0;
+let books;
+let bulletsOfBooks = new Array();
+
 let myHeroRunning;
 let myHeroJumping;
-let myHeroPower;
+let myHero = [];
+let currentHero = 0;
 
 const enemies = [];
 let currentEnemy;
@@ -55,9 +70,6 @@ let randomEnemy;
 
 let flagInvencible = false;
 let flagRunning = true;
-let flagSliping = false;
-let flagJumping = false;
-let flagTransformed = false;
 
 const matriz_hero_running = [
     [41, 38],
@@ -83,7 +95,7 @@ const matriz_hero_jumping = [
     [754, 254]
 ];
 
-const matriz_hero_power = [
+const matriz_skill_one = [
     [3, 12],
     [180, 7],
     [362, 10],

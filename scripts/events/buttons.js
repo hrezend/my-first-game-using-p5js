@@ -9,7 +9,7 @@ class ButtonMenuToFirstStage{
     }
     draw(){
         this.button.position(this.x, this.y);
-        this.button.center('horizontal');
+        //this.button.center('horizontal');
     }
     removeButton(){
         this.button.remove();
@@ -34,14 +34,14 @@ class ButtonInstructions{
     }
     draw(){
         this.button.position(this.x, this.y);
-        this.button.center('horizontal');
+        //this.button.center('horizontal');
     }
     removeButton(){
         this.button.remove();
     };
     _changeScene(){
         confirm('Escape the imminent dangers of social media and become a wise man.');
-        confirm('Press W to jump \nPress WW to double jump \nPress S to slip \nPress SPACE to be invencible');
+        confirm('Press Space to jump \nPress Space 2x to double jump \nPress Shift to slip \nPress T to be invencible');
     }
 }
 
@@ -56,7 +56,7 @@ class ButtonCredits{
     }
     draw(){
         this.button.position(this.x, this.y);
-        this.button.center('horizontal');
+        //this.button.center('horizontal');
     }
     removeButton(){
         this.button.remove();
