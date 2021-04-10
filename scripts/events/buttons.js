@@ -41,7 +41,7 @@ class ButtonInstructions{
     };
     _changeScene(){
         confirm('Escape the imminent dangers of social media and become a wise man.');
-        confirm('Press Space to jump \nPress Space 2x to double jump \nPress Shift to slip \nPress T to be invencible');
+        confirm('Press Space to jump \nPress Space 2x to double jump \nPress F to kill the monsters');
     }
 }
 

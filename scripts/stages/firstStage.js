@@ -3,10 +3,7 @@ class FirstStage{
         if(keyCode === 32){ //Space
             myHero[0].jump();
         }
-        if(keyCode === 84){ //KeyT
-            myHero[0].transform();
-        }
-        if(key === 'ArrowRight') {
+        if(keyCode === 70) {//KeyF
             if(books.amount != 0) {
                 myHero[currentHero].attack();
             }

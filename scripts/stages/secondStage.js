@@ -3,9 +3,6 @@ class SecondStage{
         if(keyCode === 32){ //Space
             myHero[0].jump();
         }
-        if(keyCode === 84){ //KeyT
-            myHero[0].transform();
-        }
     }
 
     setup(){
