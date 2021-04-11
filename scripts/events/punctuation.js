@@ -39,9 +39,9 @@ class Punctuation{
             this.points = this.points + value;
         }
     }
-    decrementPoints(){
-        if(this.points >= 5){
-            this.points = this.points - 5;
+    decrementPoints(value){
+        if((this.points-value) >= value){
+            this.points = this.points - value;
         }
     }
 }

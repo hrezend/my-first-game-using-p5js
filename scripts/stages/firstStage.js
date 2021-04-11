@@ -22,13 +22,15 @@ class FirstStage{
         firstStageSceneryPoste = new Scenery(imagefirstStagePoste, 8)
 
         const thief = new Enemy(matriz_thief, imageEnemyThief, width, 10, 190, 230, 350, 420, 60);
-        const troll_facebook = new Enemy(matriz_troll, imageEnemyTrollFacebook, width, -20, 400, 400, 400, 400, 25);
-        const troll_tiktok = new Enemy(matriz_troll, imageEnemyTrollTiktok, width, -20, 400, 400, 400, 400, 20);
-        const troll_youtube = new Enemy(matriz_troll, imageEnemyTrollYoutube, width, -20, 400, 400, 400, 400, 20);
-        const troll_instagram = new Enemy(matriz_troll, imageEnemyTrollInstagram, width, -20, 400, 400, 400, 400, 25);
-        const troll_twitter = new Enemy(matriz_troll, imageEnemyTrollTwitter, width, -20, 400, 400, 400, 400, 20);
-        const troll_snapchat = new Enemy(matriz_troll, imageEnemyTrollSnapchat, width, -20, 400, 400, 400, 400, 20);
-        const troll_spotify = new Enemy(matriz_troll, imageEnemyTrollSpotify, width, -20, 400, 400, 400, 400, 20);
+        const troll_facebook = new Enemy(matriz_troll, imageEnemyTrollFacebook, width, -30, 400, 400, 400, 400, 25);
+        const troll_tiktok = new Enemy(matriz_troll, imageEnemyTrollTiktok, width, -30, 400, 400, 400, 400, 20);
+        const troll_youtube = new Enemy(matriz_troll, imageEnemyTrollYoutube, width, -30, 400, 400, 400, 400, 20);
+        const troll_instagram = new Enemy(matriz_troll, imageEnemyTrollInstagram, width, -30, 400, 400, 400, 400, 25);
+        const troll_twitter = new Enemy(matriz_troll, imageEnemyTrollTwitter, width, -30, 400, 400, 400, 400, 20);
+        const troll_snapchat = new Enemy(matriz_troll, imageEnemyTrollSnapchat, width, -30, 400, 400, 400, 400, 20);
+        const troll_spotify = new Enemy(matriz_troll, imageEnemyTrollSpotify, width, -30, 400, 400, 400, 400, 20);
+        const troll_amazon = new Enemy(matriz_troll, imageEnemyTrollAmazon, width, -30, 400, 400, 400, 400, 20);
+        const troll_google = new Enemy(matriz_troll, imageEnemyTrollGoogle, width, -30, 400, 400, 400, 400, 20);
         enemies.push(thief);
         enemies.push(troll_facebook);
         enemies.push(troll_tiktok);
@@ -37,6 +39,8 @@ class FirstStage{
         enemies.push(troll_twitter);
         enemies.push(troll_spotify);
         enemies.push(troll_snapchat);
+        enemies.push(troll_amazon);
+        enemies.push(troll_google);
 
         randomEnemy = Math.floor(Math.random() * enemies.length);
     }
@@ -90,19 +94,31 @@ class FirstStage{
         //Mostra os livros (balas) em tela
         books.draw();
 
-        //Mostra o score em tela
+        //Mostra o score em tela e incrementa
         score.show();
         score.incrementPoints(0.5);
 
         //Verifica se o nosso heroi esta colidindo com um inimigo
         if(myHero[currentHero].colliding(currentEnemy)){
-            score.decrementPoints();
+            score.decrementPoints(10);
         }
 
         //Muda de fase quando a pontuacao chega a 1000
         if(score.points >= 1000){
             currentScenery = 'secondStage';
             sceneries[currentScenery].setup();
+
+            for(let i = 0; i < 5; i++){
+                books.incrementAmount();
+            }
+        }
+
+        //Recarrega quando atinge marker progress
+        if(score.points == 300){
+            books.rechargeFull();
+        }
+        if(score.points == 900){
+            books.rechargeFull();
         }
     }
 }

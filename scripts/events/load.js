@@ -35,8 +35,10 @@ function preload(){
     imageEnemyTrollYoutube = loadImage('../images/enemies/troll_youtube.png');
     imageEnemyTrollInstagram = loadImage('../images/enemies/troll_instagram.png');
     imageEnemyTrollTwitter = loadImage('../images/enemies/troll_twitter.png');
-    imageEnemyTrollSpotify = loadImage('../images/enemies/troll_spotify.png');;
-    imageEnemyTrollSnapchat = loadImage('../images/enemies/troll_snapchat.png');;
+    imageEnemyTrollSpotify = loadImage('../images/enemies/troll_spotify.png');
+    imageEnemyTrollSnapchat = loadImage('../images/enemies/troll_snapchat.png');
+    imageEnemyTrollGoogle = loadImage('../images/enemies/troll_google.png');
+    imageEnemyTrollAmazon = loadImage('../images/enemies/troll_amazon.png');
 
     imageMarkerProgressZumbi = loadImage('../images/progress/marker_zumbi.png');
     imageMarkerEistein = loadImage('../images/progress/marker_eistein.png');

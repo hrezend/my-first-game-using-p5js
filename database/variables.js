@@ -32,6 +32,8 @@ let imageEnemyTrollYoutube;
 let imageEnemyTrollInstagram;
 let imageEnemyTrollSpotify;
 let imageEnemyTrollSnapchat;
+let imageEnemyTrollGoogle;
+let imageEnemyTrollAmazon;
 
 let imageMarkerProgressZumbi;
 let imageMarkerBrain;

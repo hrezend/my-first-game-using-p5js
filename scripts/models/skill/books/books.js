@@ -16,6 +16,10 @@ class Books{
         }
     }
     
+    rechargeFull(){
+        this.amount = this.maximo;
+    }
+
     incrementAmount(){
         if(this.amount <= this.maximo){
             this.amount++;
