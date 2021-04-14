@@ -2,13 +2,15 @@ class Introduction{
     constructor(){}
 
     setup(){
-        text_intro = split("Xnowden é um grande hacker que protege nações das criaturas malignas.\nEssas criaturas são responsáveis por roubar dados pessoais de bilhões de pessoas, além de sugar os miolos de milhões delas.\nSão conhecidos como 'monstros-sociais'.\nO grande guerreiro Xnowden decidiu acabar com essa palhaçada e chutar o pau da barraca.\nLutando contra os monstros-sociais ele precisa tomar cuidado para não ter os seus dados e o seu conhecimento roubado.\n \"A janela para debater nossa atitude ante a tecnologia está se fechando\", é necessário lutar!\".\n Sua única opção é chegar à selva onde o 'monstro-social-chefe' se esconde.\n Será que ele irá conseguir?", '\n');
+        text_intro = split("Xnowden é um grande hacker que protege as nações das criaturas malignas.\nEssas criaturas são responsáveis por roubar dados pessoais de bilhões de pessoas, além de sugar os miolos de milhões delas.\nSão conhecidos como 'monstros-sociais'.\nO grande guerreiro Xnowden decidiu acabar com essa palhaçada e chutar o pau da barraca.\nLutando contra os monstros-sociais ele precisa tomar cuidado para não ter os seus dados e o seu conhecimento roubado.\n \"A janela para debater nossa atitude ante a tecnologia está se fechando\", é necessário lutar!\".\n Sua única opção é chegar à selva onde o 'monstro-social-chefe' se esconde.\n Será que ele irá conseguir?", '\n');
     }
 
     draw(){
-        textFont(lettersFont);
+        textFont(fontHanaleiFill);
         this._changeBackground();
-        textSize(22);
+        textSize(44);
+        stroke('#d82b00');
+        strokeWeight(2);
         textAlign(CENTER);
 
         txtalfa += 5 * txtalfax;
@@ -27,7 +29,7 @@ class Introduction{
                 }
             }
             else if(txtalfa < 0){
-                txtalfa = 1;
+                txtalfax = 1;
                 flagTime = 0;
                 text_indice++;
             }
@@ -51,12 +53,12 @@ class Introduction{
             flagTime = 0;
         }
 
-        text(text_intro[text_indice], 0.2 * width, 0.4 * height, 0.6 * width, 0.4 * height);
+        text(text_intro[text_indice], width / 4.5, height / 4, 0.6 * width, 0.4 * height);
 
-        if(text_indice > 0){
+        if(text_indice > 0 && (text_indice != text_intro.length-1)){
             fill(0);
-            textSize(16);
-            text('Pressione ESC para pular a Introdução!', 0.5*width, 0.95*height);
+            textSize(28);
+            text('Pressione ESC para pular a Introdução', 0.5*width, 0.95*height);
         }
 
         if(keyIsPressed && (text_indice > 0)){
@@ -71,12 +73,11 @@ class Introduction{
                 }
             }
         }
-
         //fim da funcao draw()
     }
 
     _changeBackground(){
-        background('#89d2c3');
+        background('#03324c');
     }
 
     _changeScenery(keyCode, key){

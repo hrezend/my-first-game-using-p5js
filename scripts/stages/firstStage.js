@@ -14,8 +14,6 @@ class FirstStage{
         soundMenu.stop();
         soundGame.loop();
 
-        score = new Punctuation();
-
         firstStageScenerySun = new Scenery(imagefirstStageSun, 0.1);
         firstStageSceneryParalax = new Scenery(imagefirstStageParalax, 4);
         firstStageSceneryBackground = new Scenery(imagefirstStageBackground, 7);
@@ -107,10 +105,6 @@ class FirstStage{
         if(score.points >= 1000){
             currentScenery = 'secondStage';
             sceneries[currentScenery].setup();
-
-            for(let i = 0; i < 5; i++){
-                books.incrementAmount();
-            }
         }
 
         //Recarrega quando atinge marker progress

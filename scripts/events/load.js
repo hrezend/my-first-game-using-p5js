@@ -1,6 +1,9 @@
 function preload(){
     //Fonts
-    lettersFont = loadFont('../fonts/PressStart2P-Regular.ttf');
+    fontPressStart2P = loadFont('../fonts/PressStart2P-Regular.ttf');
+    fontCinzelDecorative = loadFont('../fonts/CinzelDecorative-Regular.ttf');
+    fontMarcellusSC = loadFont('../fonts/MarcellusSC-Regular.ttf');
+    fontHanaleiFill = loadFont('../fonts/HanaleiFill-Regular.ttf');
     font2 = loadFont('../fonts/font2.otf');
 
     //Sounds

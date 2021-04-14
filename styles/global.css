@@ -1,5 +1,7 @@
 /*CSS Geral*/
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
 html, body {
   margin: 0;
@@ -31,7 +33,7 @@ canvas {
 
 /*CSS da Pagina do Menu*/
 .button-stages{
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Hanalei Fill', cursive;
   padding: 1rem 1.25rem;
   font-size: 1.5rem;
   letter-spacing: .25rem;

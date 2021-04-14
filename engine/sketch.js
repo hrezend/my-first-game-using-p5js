@@ -4,12 +4,14 @@ function setup(){
 
   newGame = new NewGame();
   introduction = new Introduction();
+  instructions = new Instructions();
+  credits = new Credits();
   firstStage = new FirstStage();
   secondStage = new SecondStage();
 
   newGame.setup();
 
-  sceneries = {newGame, introduction, firstStage, secondStage};
+  sceneries = {newGame, introduction, instructions, credits, firstStage, secondStage};
 }
 
 function keyPressed(){
@@ -17,6 +19,5 @@ function keyPressed(){
 }
 
 function draw(){
-  frameCount++;
   sceneries[currentScenery].draw();
 }

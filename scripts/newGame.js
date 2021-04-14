@@ -4,10 +4,11 @@ class NewGame{
             console.log('Começando...');
         };
     }
+    
     setup(){
         //Crio o Menu com os botões gerenciadores
         soundMenu.loop();
-        buttonMenuToIntroduction = new ButtonMenuToIntroduction('Start', 0, 0);
+        buttonMenuToIntroduction = new ButtonMenuToIntroduction('New Game', 0, 0);
         buttonInstructions = new ButtonInstructions('Instructions', 0, 0);
         buttonCredits = new ButtonCredits('Credits', 0, 0);
 
@@ -18,17 +19,22 @@ class NewGame{
         myHero.push(myHeroJumping);
 
         //Crio todas as instâncias de skills do meu herói
-        //skill_one = new Skill(matriz_skill_one, imageSkillOne, 0, 20, 100, 100, 170, 170);
         books = new Books(5, 5);
+
+        //Crio a instância da barra de progresso
+        score = new Punctuation();
     }
+
     draw(){
         this._imagemDeFundo();
         this._texto();
         this._button();
     }
+
     _imagemDeFundo(){
         image(imageMenu, 0, 0, width, height);
     }
+
     _texto(){
         textAlign(CENTER);
         textFont(font2);
@@ -38,18 +44,18 @@ class NewGame{
         strokeWeight(6);
         fill('#03324c');
     }
+
     _button(){
-        //buttonMenuToFirstStage.y = height / 8 * 7;
-        buttonMenuToIntroduction.y = height / 2.2;
-        buttonMenuToIntroduction.x = width / 1.4;
+        buttonMenuToIntroduction.y = height / 1.24;
+        buttonMenuToIntroduction.x = width / 1.25;
         buttonMenuToIntroduction.draw();
 
-        buttonInstructions.y = height / 3;
-        buttonInstructions.x = width / 1.4;
+        buttonInstructions.y = height / 1.11;
+        buttonInstructions.x = width / 1.40;
         buttonInstructions.draw();
 
-        buttonCredits.y = height / 4.5;
-        buttonCredits.x = width / 1.4;
+        buttonCredits.y = height / 1.11;
+        buttonCredits.x = width / 1.13;
         buttonCredits.draw();
     }
 }

@@ -40,8 +40,11 @@ class ButtonInstructions{
         this.button.remove();
     };
     _changeScene(){
-        confirm('Escape the imminent dangers of social media and become a wise man.');
-        confirm('Press Space to jump \nPress Space 2x to double jump \nPress F to kill the monsters');
+        this.button.remove();
+        buttonMenuToIntroduction.removeButton();
+        buttonCredits.removeButton();
+        currentScenery = 'instructions';
+        sceneries[currentScenery].setup();
     }
 }
 
@@ -62,6 +65,10 @@ class ButtonCredits{
         this.button.remove();
     };
     _changeScene(){
-        confirm('MATA68 - PROJECT \nDiscentes: Hérson Rezende, João Gabriel e Djair Maykon \nContact: herson.reis@ufba.br');
+        this.button.remove();
+        buttonMenuToIntroduction.removeButton();
+        buttonInstructions.removeButton();
+        currentScenery = 'credits';
+        sceneries[currentScenery].setup();
     }
 }

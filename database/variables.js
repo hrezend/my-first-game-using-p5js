@@ -7,10 +7,12 @@ let txtalfa = 0, txtalfax = 1;
 
 //Variaveis Gerais
 let fpsGame = 30;
-let frameCount = 0;
 
 //Variaveis que recebem os tipos de fontes externas
-let lettersFont;
+let fontPressStart2P;
+let fontCinzelDecorative;
+let fontMarcellusSC;
+let fontHanaleiFill;
 let font2;
 
 //Variaveis que recebem os efeitos sonoros
