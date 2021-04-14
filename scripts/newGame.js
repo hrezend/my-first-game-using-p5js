@@ -7,7 +7,9 @@ class NewGame{
     
     setup(){
         //Crio o Menu com os botões gerenciadores
-        soundMenu.loop();
+        if(!soundMenu.isLooping()){
+            soundMenu.loop();   
+        }
         buttonMenuToIntroduction = new ButtonMenuToIntroduction('New Game', 0, 0);
         buttonInstructions = new ButtonInstructions('Instructions', 0, 0);
         buttonCredits = new ButtonCredits('Credits', 0, 0);

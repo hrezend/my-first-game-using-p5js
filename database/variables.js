@@ -95,6 +95,7 @@ let randomEnemy;
 
 let flagInvencible = false;
 let flagRunning = true;
+let flagBlink = 0;
 
 const matriz_hero_running = [
     [41, 38],

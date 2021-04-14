@@ -1,6 +1,8 @@
 class Credits{
     constructor(){}
 
+    keyPressed(){}
+
     setup(){}
 
     draw(){

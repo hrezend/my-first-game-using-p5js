@@ -6,7 +6,7 @@ class Hero extends Animation{
         this.y = this.baseY;
         this.gravity = 3;
         this.speedJump = 0;
-        this.heightJump = 33;
+        this.heightJump = 34;
         this.amountJumps = 0;
         this.invencible = false;
     }
@@ -41,6 +41,13 @@ class Hero extends Animation{
             this.amountJumps = 0;
             currentHero = 0;
         }
+    }
+
+    becomeInvencible(){
+        this.invencible = true;
+        setTimeout(() => {
+            this.invencible = false
+        }, 1000);
     }
 
     colliding(enemy){

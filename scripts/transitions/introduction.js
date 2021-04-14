@@ -1,6 +1,8 @@
 class Introduction{
     constructor(){}
 
+    keyPressed(){}
+
     setup(){
         text_intro = split("Xnowden é um grande hacker que protege as nações das criaturas malignas.\nEssas criaturas são responsáveis por roubar dados pessoais de bilhões de pessoas, além de sugar os miolos de milhões delas.\nSão conhecidos como 'monstros-sociais'.\nO grande guerreiro Xnowden decidiu acabar com essa palhaçada e chutar o pau da barraca.\nLutando contra os monstros-sociais ele precisa tomar cuidado para não ter os seus dados e o seu conhecimento roubado.\n \"A janela para debater nossa atitude ante a tecnologia está se fechando\", é necessário lutar!\".\n Sua única opção é chegar à selva onde o 'monstro-social-chefe' se esconde.\n Será que ele irá conseguir?", '\n');
     }

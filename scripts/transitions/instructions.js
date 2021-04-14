@@ -1,6 +1,8 @@
 class Instructions{
     constructor(){}
 
+    keyPressed(){}
+
     setup(){}
 
     draw(){

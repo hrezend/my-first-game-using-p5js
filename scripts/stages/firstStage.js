@@ -97,8 +97,23 @@ class FirstStage{
         score.incrementPoints(0.5);
 
         //Verifica se o nosso heroi esta colidindo com um inimigo
+        if(myHero[currentHero].invencible){
+            myHero[0].filter(INVERT);
+            myHero[1].filter(INVERT);
+            flagBlink++;
+        }
+        else{
+            if(flagBlink % 2 != 0){
+                myHero[0].filter(INVERT);
+                myHero[1].filter(INVERT);
+                flagBlink = 0;
+            }
+        }
+
         if(myHero[currentHero].colliding(currentEnemy)){
-            score.decrementPoints(10);
+            score.decrementPoints(30);
+            myHero[0].becomeInvencible();
+            myHero[1].becomeInvencible();
         }
 
         //Muda de fase quando a pontuacao chega a 1000
