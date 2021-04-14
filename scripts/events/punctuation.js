@@ -35,12 +35,12 @@ class Punctuation{
         }
     }
     incrementPoints(value){
-        if((this.points+value) < 1000){
+        if( (this.points+value) <= 1000 ){
             this.points = this.points + value;
         }
     }
     decrementPoints(value){
-        if((this.points-value) >= value){
+        if( (this.points-value) >= value ){
             this.points = this.points - value;
         }
     }

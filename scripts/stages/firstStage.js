@@ -95,6 +95,7 @@ class FirstStage{
         //Mostra o score em tela e incrementa
         score.show();
         score.incrementPoints(0.5);
+        console.log(score.points)
 
         //Verifica se o nosso heroi esta colidindo com um inimigo
         if(myHero[currentHero].invencible){
