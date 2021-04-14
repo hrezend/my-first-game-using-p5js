@@ -1,4 +1,4 @@
-class ButtonMenuToFirstStage{
+class ButtonMenuToIntroduction{
     constructor(text, x, y){
         this.text = text;
         this.x = x;
@@ -18,8 +18,8 @@ class ButtonMenuToFirstStage{
         this.button.remove();
         buttonInstructions.removeButton();
         buttonCredits.removeButton();
-        currentScenery = 'firstStage';
-        firstStage.setup();
+        currentScenery = 'introduction';
+        sceneries[currentScenery].setup();
     }
 }
 

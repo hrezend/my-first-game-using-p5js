@@ -7,7 +7,7 @@ class NewGame{
     setup(){
         //Crio o Menu com os botões gerenciadores
         soundMenu.loop();
-        buttonMenuToFirstStage = new ButtonMenuToFirstStage('Start', 0, 0);
+        buttonMenuToIntroduction = new ButtonMenuToIntroduction('Start', 0, 0);
         buttonInstructions = new ButtonInstructions('Instructions', 0, 0);
         buttonCredits = new ButtonCredits('Credits', 0, 0);
 
@@ -40,9 +40,9 @@ class NewGame{
     }
     _button(){
         //buttonMenuToFirstStage.y = height / 8 * 7;
-        buttonMenuToFirstStage.y = height / 2.2;
-        buttonMenuToFirstStage.x = width / 1.4;
-        buttonMenuToFirstStage.draw();
+        buttonMenuToIntroduction.y = height / 2.2;
+        buttonMenuToIntroduction.x = width / 1.4;
+        buttonMenuToIntroduction.draw();
 
         buttonInstructions.y = height / 3;
         buttonInstructions.x = width / 1.4;

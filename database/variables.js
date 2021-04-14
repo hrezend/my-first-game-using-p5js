@@ -1,6 +1,19 @@
+//Variaveis que configuram a tela de Introdução do jogo
+let text_intro;
+let text_indice = 0;
+let flagIntroIsEnding = false;
+let flagTime = 0;
+let txtalfa = 0, txtalfax = 1;
+
+//Variaveis Gerais
+let fpsGame = 30;
+let frameCount = 0;
+
+//Variaveis que recebem os tipos de fontes externas
 let lettersFont;
 let font2;
 
+//Variaveis que recebem os efeitos sonoros
 let soundJump;
 let soundMenu;
 let soundGame;
@@ -8,22 +21,29 @@ let soundEletric;
 let soundCasting;
 let soundEnemyHited;
 
+//Variavel que recebe a imagem do menu do jogo
+let imageMenu;
+
+//Variaveis que recebem as imagens da primeira fase do jogo
 let imagefirstStageSun;
 let imagefirstStagePoste
 let imagefirstStageParalax;
 let imagefirstStageBackground;
 
+//Variaveis que recebem as imagens da segunda fase do jogo
 let imageSecondStageBamboo1;
 let imageSecondStageBamboo2;
 let imageSecondStageBackground;
 let imageSecondStageGrounds;
 
+//Variaveis que recebem as sprites do nosso livro (arremessado, bala que mata os monstros)
 let imageBook;
 
-let imageMenu;
+//Variaveis que recebem as sprites do nosso heroi
 let imageHeroRun;
 let imageHeroJump;
 
+//Variaveis que recebem as sprites dos monstros do jogo
 let imageEnemyThief;
 let imageEnemyTrollFacebook;
 let imageEnemyTrollTiktok;
@@ -35,11 +55,12 @@ let imageEnemyTrollSnapchat;
 let imageEnemyTrollGoogle;
 let imageEnemyTrollAmazon;
 
+//Variaveis que recebem as imagens dos marcadores de progresso
 let imageMarkerProgressZumbi;
 let imageMarkerBrain;
 let imageMarkerEistein;
 
-let buttonMenuToFirstStage;
+let buttonMenuToIntroduction;
 let buttonInstructions;
 let buttonCredits;
 

@@ -1,14 +1,15 @@
-function setup() {
+function setup(){
   createCanvas(windowWidth, windowHeight);
-  frameRate(30);
+  frameRate(fpsGame);
 
   newGame = new NewGame();
+  introduction = new Introduction();
   firstStage = new FirstStage();
   secondStage = new SecondStage();
 
   newGame.setup();
 
-  sceneries = {newGame, firstStage, secondStage};
+  sceneries = {newGame, introduction, firstStage, secondStage};
 }
 
 function keyPressed(){
@@ -16,5 +17,6 @@ function keyPressed(){
 }
 
 function draw(){
+  frameCount++;
   sceneries[currentScenery].draw();
 }
