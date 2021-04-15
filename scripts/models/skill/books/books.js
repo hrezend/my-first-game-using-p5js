@@ -14,6 +14,9 @@ class Books{
             const posicao = this.xInicial * (i + 1);
             image(imageBook, posicao + margem, this.y, this.largura, this.altura);
         }
+        if(this.amount == 0){
+            image(imageBookBlocked, this.xInicial, this.y, this.largura, this.altura);
+        }
     }
     
     rechargeFull(){

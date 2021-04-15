@@ -27,6 +27,9 @@ class SecondStage{
         enemies.push(troll_spotify);
 
         randomEnemy = Math.floor(Math.random() * enemies.length);
+
+        myHero[0].filter(THRESHOLD);
+        myHero[1].filter(THRESHOLD);
     }
 
     draw(){

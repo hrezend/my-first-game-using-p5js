@@ -40,6 +40,7 @@ let imageSecondStageGrounds;
 
 //Variaveis que recebem as sprites do nosso livro (arremessado, bala que mata os monstros)
 let imageBook;
+let imageBookBlocked;
 
 //Variaveis que recebem as sprites do nosso heroi
 let imageHeroRun;

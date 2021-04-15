@@ -33,6 +33,7 @@ function preload(){
     imageHeroJump = loadImage('../images/hero/hero_jump.png');
 
     imageBook = loadImage('../images/skills/book.png');
+    imageBookBlocked = loadImage('../images/skills/book_blocked.png');
 
     imageEnemyThief = loadImage('../images/enemies/thief.png');
     imageEnemyTrollFacebook = loadImage('../images/enemies/troll_facebook.png');

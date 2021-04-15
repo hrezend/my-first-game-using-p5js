@@ -13,10 +13,12 @@ class FirstStage{
         }
         if(keyCode === 80){ //KeyP
             if(isLooping()){
-                noLoop();
+                soundGame.stop(); 
+                noLoop();  
             }
             else{
-                loop();
+                soundGame.loop(); 
+                loop();  
             }
         }
     }

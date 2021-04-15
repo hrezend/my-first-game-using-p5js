@@ -16,7 +16,7 @@ class Instructions{
         text("INSTRUÇÕES", width * 0.5, height * 0.2);
 
         textLeading(35);
-        text("Pulo: Tecle espaço\nPulo Duplo: Tecle espaço duas vezes\nAtirar: Tecle F\nPausar o Jogo: Tecle P\nRecarregar o Jogo: Tecle F5\n\nDesvie dos monstros, ou desintegre-os com o poder supremo do conhecimento.\n \n Pontue até completar a barra de progresso, e então enfrente o boss.", width * 0.5, height * 0.3);
+        text("Pulo: Tecle espaço\nPulo Duplo: Tecle espaço duas vezes\nAtirar: Tecle F\nPausar o Jogo: Tecle P\nRecarregar o Jogo: Tecle F5\n\nDesvie dos monstros, ou desintegre-os com o poder supremo do conhecimento.\nA cada meta de progresso você encherá sua munição.\nPontue até completar a barra de progresso, e então enfrente o boss.", width * 0.5, height * 0.3);
         
         stroke('#d82b00');
         strokeWeight(2);
