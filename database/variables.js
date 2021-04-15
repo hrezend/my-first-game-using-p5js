@@ -22,6 +22,7 @@ let soundGame;
 let soundEletric;
 let soundCasting;
 let soundEnemyHited;
+let soundBusted;
 
 //Variavel que recebe a imagem do menu do jogo
 let imageMenu;
@@ -48,6 +49,7 @@ let imageHeroJump;
 
 //Variaveis que recebem as sprites dos monstros do jogo
 let imageEnemyThief;
+let imageEnemyZoombie;
 let imageEnemyTrollFacebook;
 let imageEnemyTrollTiktok;
 let imageEnemyTrollTwitter;
@@ -93,7 +95,6 @@ let myHero = [];
 let currentHero = 0;
 
 const enemies = [];
-let currentEnemy;
 let randomEnemy;
 
 let flagInvencible = false;
@@ -179,5 +180,18 @@ const matriz_troll = [
     [1600, 1600],
     [0, 2000],
     [400, 2000],
-    [800, 2000],
+    [800, 2000]
+];
+
+const matriz_zoombie = [
+    [1372, 512],
+    [1050, 512],
+    [720, 512],
+    [385, 512],
+    [55, 512],
+    [1355, 0],
+    [1036, 0],
+    [717, 0],
+    [386, 0],
+    [57, 0]
 ];

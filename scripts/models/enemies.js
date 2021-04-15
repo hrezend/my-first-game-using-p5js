@@ -13,7 +13,7 @@ class Enemy extends Animation{
     }
 
     visible(){
-        if(currentEnemy.x < -currentEnemy.widthOfSprite){
+        if(enemies[randomEnemy].x < -enemies[randomEnemy].widthOfSprite){
             return true;
         }
         return false;

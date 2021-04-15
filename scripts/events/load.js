@@ -13,6 +13,7 @@ function preload(){
     soundGame = loadSound('../sounds/sound_game.mp3');
     soundCasting = loadSound('../sounds/sound_arremesso.mp3');
     soundEnemyHited = loadSound('../sounds/sound_enemy_hited.mp3');
+    soundBusted = loadSound('../sounds/sound_busted.mp3');
 
     //Images
     imageMenu = loadImage('../images/scenery/menu.jpg');
@@ -36,6 +37,7 @@ function preload(){
     imageBookBlocked = loadImage('../images/skills/book_blocked.png');
 
     imageEnemyThief = loadImage('../images/enemies/thief.png');
+    imageEnemyZoombie = loadImage('../images/enemies/zoombie.png');
     imageEnemyTrollFacebook = loadImage('../images/enemies/troll_facebook.png');
     imageEnemyTrollTiktok = loadImage('../images/enemies/troll_tiktok.png');
     imageEnemyTrollYoutube = loadImage('../images/enemies/troll_youtube.png');

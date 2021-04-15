@@ -66,14 +66,13 @@ class FirstStage{
         firstStageSceneryBackground.move();
 
         //Mostra o inimigo em tela
-        currentEnemy = enemies[randomEnemy];
-        currentEnemy.show();
-        currentEnemy.move();
+        enemies[randomEnemy].show();
+        enemies[randomEnemy].move();
 
         //Assim que um inimigo fica visivel, outro eh escolhido para ser o proximo
-        if(currentEnemy.visible()){
+        if(enemies[randomEnemy].visible()){
             randomEnemy = Math.floor(Math.random() * enemies.length);
-            currentEnemy.nextEnemy();
+            enemies[randomEnemy].nextEnemy();
         }
 
         //Mostra o sprite atual do heroi
@@ -89,8 +88,8 @@ class FirstStage{
             if (xPosBullet > width) {
                 bulletsOfBooks.splice(i, 1);
             }
-            if (currentEnemy.hited(blt)) {
-                currentEnemy.hide();
+            if (enemies[randomEnemy].hited(blt)) {
+                enemies[randomEnemy].hide();
                 soundEnemyHited.play();
                 score.incrementPoints(30);
                 bulletsOfBooks.splice(i, 1)
@@ -107,9 +106,9 @@ class FirstStage{
 
         //Mostra o score em tela e incrementa
         score.show();
-        score.incrementPoints(0.5);
+        score.incrementPoints(5);
 
-        //Verifica se o nosso heroi esta colidindo com um inimigo
+        //Verifica se o nosso heroi esta colidindo com um inimigo, dando a ele invencibilidade, e o efeito visual de colisão
         if(myHero[currentHero].invencible){
             myHero[0].filter(INVERT);
             myHero[1].filter(INVERT);
@@ -123,10 +122,13 @@ class FirstStage{
             }
         }
 
-        if(myHero[currentHero].colliding(currentEnemy)){
+        if(myHero[currentHero].colliding(enemies[randomEnemy])){
             score.decrementPoints(30);
             myHero[0].becomeInvencible();
             myHero[1].becomeInvencible();
+            if(!soundBusted.isPlaying()){
+                soundBusted.play();
+            }
         }
 
         //Muda de fase quando a pontuacao chega a 1000

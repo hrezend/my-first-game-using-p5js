@@ -22,12 +22,13 @@ class SecondStage{
         secondStageGround = new Shadow(imageSecondStageGround, 8, (75 * height) / 100,width + 100, height / 3);
         secondStageBackground = new Scenery(imageSecondStageBackground, 4);
 
-        const troll_spotify = new Enemy(matriz_troll, imageEnemyTrollSpotify, width, -30, 400, 400, 400, 400, 20);
+        const zoombie = new Enemy(matriz_zoombie, imageEnemyZoombie, width, -30, 320, 500, 320, 500, 10);
         enemies.length = 0; //Isso limpa o array para poder preencher novamente com os novos monstros
-        enemies.push(troll_spotify);
+        enemies.push(zoombie);
 
         randomEnemy = Math.floor(Math.random() * enemies.length);
 
+        enemies[randomEnemy].filter(THRESHOLD);
         myHero[0].filter(THRESHOLD);
         myHero[1].filter(THRESHOLD);
     }
@@ -39,13 +40,12 @@ class SecondStage{
         secondStageBamboo1.show();
         secondStageBamboo1.move();
 
-        currentEnemy = enemies[randomEnemy];
-        currentEnemy.show();
-        currentEnemy.move();
+        enemies[randomEnemy].show();
+        enemies[randomEnemy].move();
 
-        if(currentEnemy.visible()){
+        if(enemies[randomEnemy].visible()){
             randomEnemy = Math.floor(Math.random() * enemies.length);
-            currentEnemy.nextEnemy();
+            enemies[randomEnemy].nextEnemy();
         }
 
         if(myHero[0].amountJumps < 2){
