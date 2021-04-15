@@ -8,6 +8,17 @@ class FirstStage{
                 myHero[currentHero].attack();
             }
         }
+        if(keyCode === 116){ //F5
+            window.location.reload();
+        }
+        if(keyCode === 80){ //KeyP
+            if(isLooping()){
+                noLoop();
+            }
+            else{
+                loop();
+            }
+        }
     }
 
     setup(){
@@ -95,7 +106,6 @@ class FirstStage{
         //Mostra o score em tela e incrementa
         score.show();
         score.incrementPoints(0.5);
-        console.log(score.points)
 
         //Verifica se o nosso heroi esta colidindo com um inimigo
         if(myHero[currentHero].invencible){
@@ -130,5 +140,11 @@ class FirstStage{
         if(score.points == 900){
             books.rechargeFull();
         }
+
+        //Quando o pause é ativado, desenha a imagem do pause
+        if(!isLooping()){
+            image(imagePauseSymbol, 60, 100, 80, 80);
+        }
+
     }
 }

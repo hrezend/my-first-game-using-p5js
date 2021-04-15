@@ -62,6 +62,8 @@ let imageMarkerProgressZumbi;
 let imageMarkerBrain;
 let imageMarkerEistein;
 
+let imagePauseSymbol;
+
 let buttonMenuToIntroduction;
 let buttonInstructions;
 let buttonCredits;

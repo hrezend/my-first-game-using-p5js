@@ -20,10 +20,10 @@ class Introduction{
         if(flagIntroIsEnding == false){
             if(txtalfa > 255){
                 flagTime++;
-                let numSec = 3;
+                let numSec = 2;
 
                 if(text_intro[text_indice].length > 100){
-                    numSec = 6;
+                    numSec = 4;
                 }
                 if(flagTime % (fpsGame * numSec) == 0){
                     txtalfa = 255;

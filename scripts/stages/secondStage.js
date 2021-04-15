@@ -3,6 +3,17 @@ class SecondStage{
         if(keyCode === 32){ //Space
             myHero[0].jump();
         }
+        if(keyCode === 116){ //F5
+            window.location.reload();
+        }
+        if(keyCode === 80){ //KeyP
+            if(isLooping()){
+                noLoop();
+            }
+            else{
+                loop();
+            }
+        }
     }
 
     setup(){

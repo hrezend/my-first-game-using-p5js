@@ -17,6 +17,8 @@ function preload(){
     //Images
     imageMenu = loadImage('../images/scenery/menu.jpg');
 
+    imagePauseSymbol = loadImage('../images/assets/pause.png');
+
     imagefirstStageSun = loadImage('../images/scenery/1/sun.png');
     imagefirstStageParalax = loadImage('../images/scenery/1/paralax.png');
     imagefirstStageBackground = loadImage('../images/scenery/1/background.png');

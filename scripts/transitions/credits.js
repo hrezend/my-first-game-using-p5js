@@ -24,7 +24,7 @@ class Credits{
         text("Presssione ESC para voltar ao menu principal", 0.5 * width, 0.9 * height);
 
         flagTime++;
-        if( flagTime > (fpsGame * 3) ){
+        if( flagTime > (fpsGame * 2) ){
             if(keyIsPressed){
                 this._changeScenery(keyCode, key);
             }

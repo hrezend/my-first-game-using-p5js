@@ -16,7 +16,7 @@ class Instructions{
         text("INSTRUÇÕES", width * 0.5, height * 0.2);
 
         textLeading(35);
-        text("Pulo: Tecle espaço.\nPulo Duplo: Tecle duas vezes espaço.\n Atirar: Tecle F.\n \nDesvie dos monstros, ou desintegregue-os com o poder do livro.\n \n Pontue até completar a barra de progresso, e então enfrente o boss.", width * 0.5, height * 0.3);
+        text("Pulo: Tecle espaço\nPulo Duplo: Tecle espaço duas vezes\nAtirar: Tecle F\nPausar o Jogo: Tecle P\nRecarregar o Jogo: Tecle F5\n\nDesvie dos monstros, ou desintegre-os com o poder supremo do conhecimento.\n \n Pontue até completar a barra de progresso, e então enfrente o boss.", width * 0.5, height * 0.3);
         
         stroke('#d82b00');
         strokeWeight(2);
@@ -24,7 +24,7 @@ class Instructions{
         text("Presssione ESC para voltar ao menu principal", 0.5 * width, 0.9 * height);
 
         flagTime++;
-        if( flagTime > (fpsGame * 3) ){
+        if( flagTime > (fpsGame * 2) ){
             if(keyIsPressed){
                 this._changeScenery(keyCode, key);
             }
