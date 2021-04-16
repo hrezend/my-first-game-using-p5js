@@ -82,18 +82,20 @@ class FirstStage{
         myHero[0].float();
 
         //Faz o lançamento das balas
-        for (let i = 0; i < bulletsOfBooks.length; i++) {
+        for (let i = 0; i < bulletsOfBooks.length; i++){
             let blt = bulletsOfBooks[i];
             let xPosBullet = bulletsOfBooks[i].centerX;
-            if (xPosBullet > width) {
+
+            if(xPosBullet > width) {
                 bulletsOfBooks.splice(i, 1);
             }
-            if (enemies[randomEnemy].hited(blt)) {
+            if(enemies[randomEnemy].hited(blt)){
                 enemies[randomEnemy].hide();
                 soundEnemyHited.play();
                 score.incrementPoints(30);
                 bulletsOfBooks.splice(i, 1)
             }
+            
             blt.show();
         }
 
@@ -106,7 +108,7 @@ class FirstStage{
 
         //Mostra o score em tela e incrementa
         score.show();
-        score.incrementPoints(5);
+        score.incrementPoints(10);
 
         //Verifica se o nosso heroi esta colidindo com um inimigo, dando a ele invencibilidade, e o efeito visual de colisão
         if(myHero[currentHero].invencible){
@@ -133,16 +135,41 @@ class FirstStage{
 
         //Muda de fase quando a pontuacao chega a 1000
         if(score.points >= 1000){
-            currentScenery = 'secondStage';
-            sceneries[currentScenery].setup();
+            if(countWarning < (fpsGame * 6)){
+                fill(128 + sin(frameCount * 0.1) * 128, 0, 0);
+                textAlign(CENTER);
+                stroke('#FFF');
+                strokeWeight(2);
+                text("Avançando...", width * 0.5, height * 0.3);
+                countWarning++;
+            }
+            else{
+                currentScenery = 'firstStageFinish';
+                sceneries[currentScenery].setup();
+                countWarning = 0; 
+            }
         }
 
         //Recarrega quando atinge marker progress
-        if(score.points == 300){
-            books.rechargeFull();
+        if(score.points >= 300 && score.points <= 320){
+            fill(128 + sin(frameCount * 0.1) * 128, 0, 0);
+            textAlign(CENTER);
+            stroke('#FFF');
+            strokeWeight(2);
+            text("Reached Marker Progress - Recharging...", width * 0.5, height * 0.3);
+            setTimeout(() => {
+                books.rechargeFull();
+            }, 500);
         }
-        if(score.points == 900){
-            books.rechargeFull();
+        if(score.points >= 900 && score.points <= 920){
+            fill(128 + sin(frameCount * 0.1) * 128, 0, 0);
+            textAlign(CENTER);
+            stroke('#FFF');
+            strokeWeight(2);
+            text("Reached Marker Progress - Recharging...", width * 0.5, height * 0.3);
+            setTimeout(() => {
+                books.rechargeFull();
+            }, 500);
         }
 
         //Quando o pause é ativado, desenha a imagem do pause

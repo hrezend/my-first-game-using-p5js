@@ -6,6 +6,7 @@ class Hero extends Animation{
         this.y = this.baseY;
         this.gravity = 3;
         this.speedJump = 0;
+        this.speedWalk = 10;
         this.heightJump = 34;
         this.amountJumps = 0;
         this.invencible = false;
@@ -17,11 +18,24 @@ class Hero extends Animation{
         soundCasting.play();
     }
 
+    special_attack(){
+        soundEletric.play();
+    }
+
     jump(){
         if(this.amountJumps < 2){
             soundJump.play();
             this.speedJump =- this.heightJump;
             this.amountJumps++;
+        }
+    }
+
+    walk(direction){
+        if(direction === 'left' && this.x > (0.05 * width)){
+            this.x -= this.speedWalk;
+        }
+        else if(direction === 'right' && this.x < (0.5 * width)){
+            this.x += this.speedWalk;
         }
     }
 
@@ -46,7 +60,7 @@ class Hero extends Animation{
     becomeInvencible(){
         this.invencible = true;
         setTimeout(() => {
-            this.invencible = false
+            this.invencible = false;
         }, 1000);
     }
 

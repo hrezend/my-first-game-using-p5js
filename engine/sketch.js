@@ -7,11 +7,12 @@ function setup(){
   instructions = new Instructions();
   credits = new Credits();
   firstStage = new FirstStage();
+  firstStageFinish = new FirstStageFinish();
   secondStage = new SecondStage();
 
   newGame.setup();
 
-  sceneries = {newGame, introduction, instructions, credits, firstStage, secondStage};
+  sceneries = {newGame, introduction, instructions, credits, firstStage, secondStage, firstStageFinish};
 }
 
 function keyPressed(){

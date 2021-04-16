@@ -1,10 +1,10 @@
-class Introduction{
+class FirstStageFinish{
     constructor(){}
 
     keyPressed(){}
 
     setup(){
-        text_intro = split("Xnowden é um grande hacker que protege as nações das criaturas malignas.\nEssas criaturas são responsáveis por roubar dados pessoais de bilhões de pessoas, além de sugar os miolos de milhões delas.\nSão conhecidos como 'monstros-sociais'.\nO grande guerreiro Xnowden decidiu acabar com essa palhaçada e chutar o pau da barraca.\nLutando contra os monstros-sociais ele precisa tomar cuidado para não ter os seus dados e o seu conhecimento roubado.\n \"A janela para debater nossa atitude ante a tecnologia está se fechando\", é necessário lutar!\".\n Sua única opção é chegar à selva onde o 'monstro-social-chefe' se esconde.\n Será que ele irá conseguir?", '\n');
+        text_intro = split("Xnowden pressente o caos se aproximando\nEstaria ele sentindo o poder do big boss, que é mais de 9000?\nPressione 'E' para lançar a habilidade especial e desintegrar o Big-Boss!", '\n');
     }
 
     draw(){
@@ -23,7 +23,7 @@ class Introduction{
                 let numSec = 2;
 
                 if(text_intro[text_indice].length > 100){
-                    numSec = 4;
+                    numSec = 3;
                 }
                 if(flagTime % (fpsGame * numSec) == 0){
                     txtalfa = 255;
@@ -57,19 +57,13 @@ class Introduction{
 
         text(text_intro[text_indice], width / 4.5, height / 4, 0.6 * width, 0.4 * height);
 
-        if(text_indice > 0 && (text_indice != text_intro.length-1)){
-            fill(0);
-            textSize(28);
-            text('Pressione ESC para pular a Introdução', 0.5*width, 0.95*height);
-        }
-
         if(keyIsPressed && (text_indice > 0)){
             this._changeScenery(keyCode, key);
         }
 
         if(flagIntroIsEnding == true){
             flagTime++;
-            if(flagTime > (fpsGame*3)){
+            if(flagTime > (fpsGame*1)){
                 if(keyIsPressed){
                     this._changeScenery(keyCode,key);
                 }
@@ -83,8 +77,8 @@ class Introduction{
     }
 
     _changeScenery(keyCode, key){
-        if(keyCode === 27 || keyCode === 13){ //ESC (27) e Enter (13)
-            currentScenery = 'firstStage';
+        if(keyCode === 13){ //ESC (27) e Enter (13)
+            currentScenery = 'secondStage';
             sceneries[currentScenery].setup();
             flagTime = 0;
             flagIntroIsEnding = false;

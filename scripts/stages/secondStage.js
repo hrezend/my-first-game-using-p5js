@@ -3,6 +3,9 @@ class SecondStage{
         if(keyCode === 32){ //Space
             myHero[0].jump();
         }
+        if(keyCode === 69){ //KeyE
+            myHero[currentHero].special_attack();
+        }
         if(keyCode === 116){ //F5
             window.location.reload();
         }
@@ -17,13 +20,13 @@ class SecondStage{
     }
 
     setup(){
-        secondStageBamboo1 = new Shadow(imageSecondStageBamboo1, 5 , 0,300, height);
-        secondStageBamboo2 = new Shadow(imageSecondStageBamboo2, 8 , 0,400, height);
-        secondStageGround = new Shadow(imageSecondStageGround, 8, (75 * height) / 100,width + 100, height / 3);
+        secondStageBamboo1 = new Shadow(imageSecondStageBamboo1, 5 , 0, 300, height);
+        secondStageBamboo2 = new Shadow(imageSecondStageBamboo2, 8 , 0, 400, height);
+        secondStageGround = new Shadow(imageSecondStageGround, 8, (75 * height) / 100, width + 100, height / 3);
         secondStageBackground = new Scenery(imageSecondStageBackground, 4);
 
-        const zoombie = new Enemy(matriz_zoombie, imageEnemyZoombie, width, -30, 320, 500, 320, 500, 10);
-        enemies.length = 0; //Isso limpa o array para poder preencher novamente com os novos monstros
+        const zoombie = new Enemy(matriz_zoombie, imageEnemyZoombie, width, 0, 160, 250, 320, 500, 10);
+        enemies.length = 0; //Isso limpa o array para poder preencher novamente com os novos monstros, apagando os do estagio anterior
         enemies.push(zoombie);
 
         randomEnemy = Math.floor(Math.random() * enemies.length);
@@ -53,6 +56,16 @@ class SecondStage{
         }
         myHero[0].float();
 
+        //Verifica se a tecla esta pressionada, para o heroi andar
+        if( keyIsDown(65) ){ //KeyA
+            myHero[0].walk('left');
+            myHero[1].walk('left');
+        }
+        if( keyIsDown(68) ){ //KeyD
+            myHero[0].walk('right');
+            myHero[1].walk('right');
+        }
+
         secondStageGround.show();
         secondStageGround.move();
 
@@ -60,6 +73,6 @@ class SecondStage{
         secondStageBamboo2.move();
 
         score.show();
-        score.incrementPoints();
+        score.decrementPoints(0.1);
     }
 }

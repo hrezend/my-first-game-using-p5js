@@ -5,6 +5,9 @@ let flagIntroIsEnding = false;
 let flagTime = 0;
 let txtalfa = 0, txtalfax = 1;
 
+//Variavel que faz a contagem de tempo que um aviso fica na tela
+let countWarning = 0;
+
 //Variaveis Gerais
 let fpsGame = 30;
 
