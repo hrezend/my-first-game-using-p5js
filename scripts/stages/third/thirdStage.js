@@ -68,6 +68,6 @@ class ThirdStage{
             myHero[1].walk('right');
         }
 
-        score.show();
+        //fim do draw()
     }
 }

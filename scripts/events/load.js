@@ -32,7 +32,8 @@ function preload(){
 
     imageThirdStageBackground = loadImage('../images/scenery/3/background.png');
 
-    imageHeroRun = loadImage('../images/hero/hero_run.png');
+    imageHeroRunRight = loadImage('../images/hero/hero_run_right.png');
+    imageHeroRunLeft = loadImage('../images/hero/hero_run_left.png');
     imageHeroJump = loadImage('../images/hero/hero_jump.png');
 
     imageBook = loadImage('../images/skills/book.png');
@@ -50,6 +51,14 @@ function preload(){
     imageEnemyTrollSnapchat = loadImage('../images/enemies/troll_snapchat.png');
     imageEnemyTrollGoogle = loadImage('../images/enemies/troll_google.png');
     imageEnemyTrollAmazon = loadImage('../images/enemies/troll_amazon.png');
+
+    imageTrapDatabase = loadImage('../images/traps/database.png');
+    imageTrapHtml = loadImage('../images/traps/html.png');
+    imageTrapCss = loadImage('../images/traps/css.png');
+    imageTrapCpp = loadImage('../images/traps/cpp.png');
+    imageTrapNode = loadImage('../images/traps/nodejs.png');
+    imageTrapJava = loadImage('../images/traps/java.png');
+    imageTrapGit = loadImage('../images/traps/git.png');
 
     imageMarkerProgressZumbi = loadImage('../images/progress/marker_zumbi.png');
     imageMarkerEistein = loadImage('../images/progress/marker_eistein.png');

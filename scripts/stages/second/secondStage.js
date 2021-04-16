@@ -19,8 +19,28 @@ class SecondStage{
         secondStageGround = new Shadow(imageSecondStageGround, 8, (75 * height) / 100, width + 100, height / 3);
         secondStageBackground = new Scenery(imageSecondStageBackground, 4);
 
-        myHero[0].filter(THRESHOLD);
-        myHero[1].filter(THRESHOLD);
+        const trapDatabase = new Trap(imageTrapDatabase, 15);
+        const trapHtml = new Trap(imageTrapHtml, 15);
+        const trapCss = new Trap(imageTrapCss, 15);
+        const trapCpp = new Trap(imageTrapCpp, 15);
+        const trapNode = new Trap(imageTrapNode, 15);
+        const trapJava = new Trap(imageTrapJava, 15);
+        const trapGit = new Trap(imageTrapGit, 15);
+        traps.push(trapDatabase);
+        traps.push(trapHtml);
+        traps.push(trapCss);
+        traps.push(trapCpp);
+        traps.push(trapNode);
+        traps.push(trapJava);
+        traps.push(trapGit);
+        randomTraps = Math.floor(Math.random() * traps.length);
+
+        for(let i = 0; i < myHero.length; i++){
+            myHero[i].filter(THRESHOLD);
+        }
+        for(let i = 0; i < traps.length; i++){
+            traps[i].filter(THRESHOLD);
+        }
     }
 
     draw(){
@@ -30,6 +50,19 @@ class SecondStage{
         secondStageBamboo1.show();
         secondStageBamboo1.move();
 
+        //Mostra um inimigo em tela
+        traps[randomTraps].show();
+
+        //Assim que um inimigo fica visivel, outro eh escolhido para ser o proximo
+        if(traps[randomTraps].visible()){
+            randomTraps = Math.floor(Math.random() * traps.length);
+            traps[randomTraps].nextTrap();
+        }
+
+        //Mostra outro inimigo em tela
+        traps[randomTraps].show();
+
+        //Mostra o sprite atual do heroi
         if(myHero[0].amountJumps < 2){
             myHero[currentHero].show();
         }
@@ -56,7 +89,7 @@ class SecondStage{
         score.decrementPoints(0.1);
 
         //O jogador deve sobreviver nessa fase por 30 segundos e manter a pontuação maior que 300
-        if(timeOfSurvive < 0){
+        if(timeOfSurvive <= 0){
             if(countWarning < (fpsGame * 5)){
                 textAlign(CENTER);
                 fill(128 + sin(frameCount * 0.1) * 128);

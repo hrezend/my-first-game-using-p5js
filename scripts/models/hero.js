@@ -6,7 +6,7 @@ class Hero extends Animation{
         this.y = this.baseY;
         this.gravity = 3;
         this.speedJump = 0;
-        this.speedWalk = 10;
+        this.speedWalk = 20;
         this.heightJump = 34;
         this.amountJumps = 0;
         this.invencible = false;
@@ -42,10 +42,13 @@ class Hero extends Animation{
     }
 
     walk(direction){
-        if(direction === 'left' && this.x > (0.05 * width)){
+        if(direction === 'left' && this.x > (0.025 * width)){
+            myHero[2].x = myHero[0].x;
+            myHero[2].y = myHero[0].y;
+            currentHero = 2;
             this.x -= this.speedWalk;
         }
-        else if(direction === 'right' && this.x < (0.5 * width)){
+        else if(direction === 'right' && this.x < (0.85 * width)){
             this.x += this.speedWalk;
         }
     }

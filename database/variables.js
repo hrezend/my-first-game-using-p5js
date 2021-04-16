@@ -51,7 +51,8 @@ let imageBookBlocked;
 let imageEletric;
 
 //Variaveis que recebem as sprites do nosso heroi
-let imageHeroRun;
+let imageHeroRunRight;
+let imageHeroRunLeft;
 let imageHeroJump;
 
 //Variaveis que recebem as sprites dos monstros do jogo
@@ -99,19 +100,20 @@ let books;
 let bulletsOfBooks = new Array();
 let bulletsEletric = new Array();
 
-let myHeroRunning;
-let myHeroJumping;
 let myHero = [];
 let currentHero = 0;
 
 const enemies = [];
 let randomEnemy;
 
+const traps = [];
+let randomTraps;
+
 let flagInvencible = false;
 let flagRunning = true;
 let flagBlink = 0;
 
-const matriz_hero_running = [
+const matriz_hero_running_right = [
     [41, 38],
     [287, 63],
     [560, 61],
@@ -122,6 +124,19 @@ const matriz_hero_running = [
     [561, 404],
     [843, 402],
     [1124, 405]
+];
+
+const matriz_hero_running_left = [
+    [1119, 72],
+    [863, 65],
+    [560, 61],
+    [287, 63],
+    [41, 38],
+    [1124, 405],
+    [843, 402],
+    [561, 404],
+    [284, 402],
+    [22, 400]
 ];
 
 const matriz_hero_jumping = [

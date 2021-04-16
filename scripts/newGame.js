@@ -15,10 +15,12 @@ class NewGame{
         buttonCredits = new ButtonCredits('Credits', 0, 0);
 
         //Crio todas as instâncias do meu herói (Formas de andar, pular, sprites no geral).
-        myHeroRunning = new Hero(matriz_hero_running, imageHeroRun, 0, 20, 175, 200, 251, 324);
-        myHeroJumping = new Hero(matriz_hero_jumping, imageHeroJump, 0, 20, 175, 200, 240, 240);
-        myHero.push(myHeroRunning);
+        const myHeroRunningRight = new Hero(matriz_hero_running_right, imageHeroRunRight, 0, 20, 175, 200, 251, 324);
+        const myHeroRunningLeft = new Hero(matriz_hero_running_left, imageHeroRunLeft, 0, 20, 175, 200, 251, 324);
+        const myHeroJumping = new Hero(matriz_hero_jumping, imageHeroJump, 0, 20, 175, 200, 240, 240);
+        myHero.push(myHeroRunningRight);
         myHero.push(myHeroJumping);
+        myHero.push(myHeroRunningLeft);
 
         //Crio todas as instâncias de skills do meu herói
         books = new Books(5, 5);

@@ -134,27 +134,12 @@ class FirstStage{
         }
 
         //Recarrega quando atinge marker progress
-        if(score.points >= 300 && score.points <= 320){
-            textAlign(CENTER);
-            fill(128 + sin(frameCount * 0.1) * 128);
-            stroke('#d82b00');
-            strokeWeight(2);
-            text("Reached Marker Progress - Recharging...", width * 0.5, height * 0.3);
-            fill(0, 0, 0);
-            setTimeout(() => {
-                books.rechargeFull();
-            }, 500);
+        if(score.points % 100 == 0 && score.points != 1000){
+            flagRecharging = true;
+            books.incrementAmount();
         }
-        if(score.points >= 900 && score.points <= 920){
-            textAlign(CENTER);
-            fill(128 + sin(frameCount * 0.1) * 128);
-            stroke('#d82b00');
-            strokeWeight(2);
-            text("Reached Marker Progress - Recharging...", width * 0.5, height * 0.3);
-            fill(0, 0, 0);
-            setTimeout(() => {
-                books.rechargeFull();
-            }, 500);
+        if(flagRecharging){
+            this._drawWarning();
         }
 
         //Muda de fase quando a pontuacao chega a 1000
@@ -184,5 +169,13 @@ class FirstStage{
             sceneries[currentScenery].setup();
             countWarning = 0; 
         }
+    }
+
+    _drawWarning(){
+        textAlign(CENTER);
+        fill('#000');
+        stroke('#d82b00');
+        strokeWeight(2);
+        text("Reached Marker Progress - Recharging Bullets...", width * 0.5, height * 0.3);
     }
 }

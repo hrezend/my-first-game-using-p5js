@@ -1,7 +1,7 @@
 var timeOfSurvive = 30;
 
 function decrementTimeOfSurvive(){
-    if(currentScenery === 'secondStage'){
+    if(currentScenery === 'secondStage' && timeOfSurvive > 0){
         timeOfSurvive--;
     }
 }
