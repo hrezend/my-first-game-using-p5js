@@ -35,6 +35,7 @@ function preload(){
 
     imageBook = loadImage('../images/skills/book.png');
     imageBookBlocked = loadImage('../images/skills/book_blocked.png');
+    imageEletric = loadImage('../images/skills/eletric.png');
 
     imageEnemyThief = loadImage('../images/enemies/thief.png');
     imageEnemyZoombie = loadImage('../images/enemies/zoombie.png');

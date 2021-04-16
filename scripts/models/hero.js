@@ -10,6 +10,7 @@ class Hero extends Animation{
         this.heightJump = 34;
         this.amountJumps = 0;
         this.invencible = false;
+        this.rechargingSpecialAttack = false;
     }
 
     attack(){
@@ -19,7 +20,17 @@ class Hero extends Animation{
     }
 
     special_attack(){
+        if(this.rechargingSpecialAttack){
+            return false;
+        }
+
+        this.rechargingSpecialAttack = true;
+        bulletsEletric.push(new BulletsEletric(this.x, this.y + 50, 10, 3, 25));
         soundEletric.play();
+
+        setTimeout(() => {
+            this.rechargingSpecialAttack = false;
+        }, 10000);
     }
 
     jump(){

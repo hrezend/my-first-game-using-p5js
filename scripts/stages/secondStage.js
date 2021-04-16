@@ -56,6 +56,23 @@ class SecondStage{
         }
         myHero[0].float();
 
+        //Faz o lançamento das balas
+        for (let i = 0; i < bulletsEletric.length; i++){
+            let blt = bulletsEletric[i];
+            let xPosBullet = bulletsEletric[i].centerX;
+
+            if(xPosBullet > width) {
+                bulletsEletric.splice(i, 1);
+            }
+            if(enemies[randomEnemy].hited(blt)){
+                enemies[randomEnemy].hide();
+                soundEnemyHited.play();
+                bulletsEletric.splice(i, 1);
+            }
+            
+            blt.show();
+        }
+
         //Verifica se a tecla esta pressionada, para o heroi andar
         if( keyIsDown(65) ){ //KeyA
             myHero[0].walk('left');

@@ -45,6 +45,7 @@ let imageSecondStageGrounds;
 //Variaveis que recebem as sprites do nosso livro (arremessado, bala que mata os monstros)
 let imageBook;
 let imageBookBlocked;
+let imageEletric;
 
 //Variaveis que recebem as sprites do nosso heroi
 let imageHeroRun;
@@ -91,6 +92,7 @@ let currentScenery = 'newGame';
 
 let books;
 let bulletsOfBooks = new Array();
+let bulletsEletric = new Array();
 
 let myHeroRunning;
 let myHeroJumping;
@@ -128,7 +130,7 @@ const matriz_hero_jumping = [
     [754, 254]
 ];
 
-const matriz_skill_one = [
+const matriz_eletric = [
     [3, 12],
     [180, 7],
     [362, 10],

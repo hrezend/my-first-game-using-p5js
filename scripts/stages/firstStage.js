@@ -93,9 +93,9 @@ class FirstStage{
                 enemies[randomEnemy].hide();
                 soundEnemyHited.play();
                 score.incrementPoints(30);
-                bulletsOfBooks.splice(i, 1)
+                bulletsOfBooks.splice(i, 1);
             }
-            
+
             blt.show();
         }
 
@@ -108,7 +108,7 @@ class FirstStage{
 
         //Mostra o score em tela e incrementa
         score.show();
-        score.incrementPoints(10);
+        score.incrementPoints(0.5);
 
         //Verifica se o nosso heroi esta colidindo com um inimigo, dando a ele invencibilidade, e o efeito visual de colisão
         if(myHero[currentHero].invencible){

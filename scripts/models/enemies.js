@@ -27,7 +27,7 @@ class Enemy extends Animation{
         this.x = -width;
     }
 
-    hited(skill_one){
+    hited(skill){
         noFill();
         const precision = .7
         const colisao = collideRectRect(
@@ -35,10 +35,10 @@ class Enemy extends Animation{
             this.y,
             this.width * precision,
             this.height * precision,
-            skill_one.centerX,
-            skill_one.centerY,
-            skill_one.bodyWidth * 2,
-            skill_one.bodyHeight * 4
+            skill.centerX,
+            skill.centerY,
+            skill.bodyWidth * 2,
+            skill.bodyHeight * 4
         );
         return colisao;
     }
