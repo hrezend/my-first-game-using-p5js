@@ -9,10 +9,13 @@ function setup(){
   firstStage = new FirstStage();
   firstStageFinish = new FirstStageFinish();
   secondStage = new SecondStage();
+  secondStageFinish = new SecondStageFinish();
+  thirdStage = new ThirdStage();
+  thirdStageFinish = new ThirdStageFinish();
 
   newGame.setup();
 
-  sceneries = {newGame, introduction, instructions, credits, firstStage, secondStage, firstStageFinish};
+  sceneries = {newGame, introduction, instructions, credits, firstStage, secondStage, thirdStage, firstStageFinish, secondStageFinish, thirdStageFinish};
 }
 
 function keyPressed(){

@@ -42,6 +42,9 @@ let imageSecondStageBamboo2;
 let imageSecondStageBackground;
 let imageSecondStageGrounds;
 
+//Variaveis que recebem as imagens da terceira fase do jogo
+let imageThirdStageBackground;
+
 //Variaveis que recebem as sprites do nosso livro (arremessado, bala que mata os monstros)
 let imageBook;
 let imageBookBlocked;
@@ -84,6 +87,8 @@ let secondStageBamboo1;
 let secondStageBamboo2;
 let secondStageBackground;
 let secondStageGround;
+
+let thirdStageBackground;
 
 let score;
 

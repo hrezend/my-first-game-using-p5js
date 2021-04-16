@@ -30,6 +30,8 @@ function preload(){
     imageSecondStageBackground = loadImage('../images/scenery/2/fundo.png');
     imageSecondStageGround = loadImage('../images/scenery/2/silhueta.png');
 
+    imageThirdStageBackground = loadImage('../images/scenery/3/background.png');
+
     imageHeroRun = loadImage('../images/hero/hero_run.png');
     imageHeroJump = loadImage('../images/hero/hero_jump.png');
 
