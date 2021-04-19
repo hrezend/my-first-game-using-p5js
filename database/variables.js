@@ -106,6 +106,9 @@ let currentHero = 0;
 const enemies = [];
 let randomEnemy;
 
+const bosses = [];
+let currentBoss;
+
 const traps = [];
 let randomTraps;
 

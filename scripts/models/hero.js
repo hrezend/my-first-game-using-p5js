@@ -48,7 +48,10 @@ class Hero extends Animation{
             currentHero = 2;
             this.x -= this.speedWalk;
         }
-        else if(direction === 'right' && this.x < (0.85 * width)){
+        else if(direction === 'right' && this.x < (0.85 * width) && currentScenery === 'secondStage'){
+            this.x += this.speedWalk;
+        }
+        else if(direction === 'right' && this.x < (0.70 * width) && currentScenery === 'thirdStage'){
             this.x += this.speedWalk;
         }
     }

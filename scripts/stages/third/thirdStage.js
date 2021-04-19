@@ -17,23 +17,22 @@ class ThirdStage{
     }
 
     setup(){
-        thirdStageBackground = new Scenery(imageThirdStageBackground, 1);
+        thirdStageBackground = new LongScenery(imageThirdStageBackground, 0.1, 0.1, 3960);
 
-        enemies.length = 0; //Isso limpa o array para poder preencher novamente com os novos monstros, apagando os do estagio anterior
-        const zoombie = new Enemy(matriz_zoombie, imageEnemyZoombie, width, 0, 160, 250, 320, 500, 1);
-        enemies.push(zoombie);
+        const zoombie = new Boss(matriz_zoombie, imageEnemyZoombie, width, 0, 160, 250, 320, 500);
+        bosses.push(zoombie);
 
-        randomEnemy = Math.floor(Math.random() * enemies.length);
+        currentBoss = Math.floor(Math.random() * bosses.length);
     }
 
     draw(){
         //Mostra o cenario em tela
         thirdStageBackground.show();
-        thirdStageBackground.move();
+        thirdStageBackground.moveAxisX();
 
         //Mostra o inimigo em tela
-        enemies[randomEnemy].show();
-        enemies[randomEnemy].move();
+        bosses[currentBoss].show();
+        bosses[currentBoss].notHide();
 
         //Mostra o heroi em tela
         if(myHero[0].amountJumps < 2){
@@ -49,8 +48,8 @@ class ThirdStage{
             if(xPosBullet > width) {
                 bulletsEletric.splice(i, 1);
             }
-            if(enemies[randomEnemy].hited(blt)){
-                enemies[randomEnemy].hide();
+            if(bosses[currentBoss].hited(blt)){
+                bosses[currentBoss].hide();
                 soundEnemyHited.play();
                 bulletsEletric.splice(i, 1);
             }

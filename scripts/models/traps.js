@@ -3,6 +3,7 @@ class Trap{
         this.image = image;
         this.speed = speed;
         this.y = 0;
+        this.x = Math.floor(Math.random() * width);
     }
     
     filter(param){

@@ -8,9 +8,6 @@ class FirstStage{
                 myHero[currentHero].attack();
             }
         }
-        if(keyCode === 116){ //F5
-            window.location.reload();
-        }
         if(keyCode === 80){ //KeyP
             if(isLooping()){
                 soundGame.stop(); 
@@ -27,10 +24,10 @@ class FirstStage{
         soundMenu.stop();
         soundGame.loop();
 
-        firstStageScenerySun = new Scenery(imagefirstStageSun, 0.1);
-        firstStageSceneryParalax = new Scenery(imagefirstStageParalax, 4);
-        firstStageSceneryBackground = new Scenery(imagefirstStageBackground, 7);
-        firstStageSceneryPoste = new Scenery(imagefirstStagePoste, 8)
+        firstStageScenerySun = new Scenery(imagefirstStageSun, 0.1, 0.1);
+        firstStageSceneryParalax = new Scenery(imagefirstStageParalax, 4, 1);
+        firstStageSceneryBackground = new Scenery(imagefirstStageBackground, 7, 1);
+        firstStageSceneryPoste = new Scenery(imagefirstStagePoste, 8, 1)
 
         const thief = new Enemy(matriz_thief, imageEnemyThief, width, 10, 190, 230, 350, 420, 60);
         const troll_facebook = new Enemy(matriz_troll, imageEnemyTrollFacebook, width, -30, 400, 400, 400, 400, 25);
@@ -61,9 +58,9 @@ class FirstStage{
         firstStageScenerySun.show();
         firstStageSceneryParalax.show();
         firstStageSceneryBackground.show();
-        firstStageScenerySun.move();
-        firstStageSceneryParalax.move();
-        firstStageSceneryBackground.move();
+        firstStageScenerySun.moveAxisX();
+        firstStageSceneryParalax.moveAxisX();
+        firstStageSceneryBackground.moveAxisX();
 
         //Mostra o inimigo em tela
         enemies[randomEnemy].show();
@@ -92,7 +89,7 @@ class FirstStage{
             if(enemies[randomEnemy].hited(blt)){
                 enemies[randomEnemy].hide();
                 soundEnemyHited.play();
-                score.incrementPoints(30);
+                score.incrementPoints(pontosGanhosAoDerrotarInimigoComum);
                 bulletsOfBooks.splice(i, 1);
             }
 
@@ -101,14 +98,14 @@ class FirstStage{
 
         //Mostra as artes dos postes (depois do heroi, para dar o efeito de que o heroi passa por tras dos postes)
         firstStageSceneryPoste.show();
-        firstStageSceneryPoste.move();
+        firstStageSceneryPoste.moveAxisX();
 
         //Mostra os livros (balas) em tela
         books.draw();
 
         //Mostra o score em tela e incrementa
         score.show();
-        score.incrementPoints(0.5);
+        score.incrementPoints(pontosGanhosAoDecorrerDoTempo);
 
         //Verifica se o nosso heroi esta colidindo com um inimigo, dando a ele invencibilidade, e o efeito visual de colisão
         if(myHero[currentHero].invencible){
@@ -125,7 +122,7 @@ class FirstStage{
         }
 
         if(myHero[currentHero].colliding(enemies[randomEnemy])){
-            score.decrementPoints(30);
+            score.decrementPoints(pontosPerdidosAoColidirComInimigo);
             myHero[0].becomeInvencible();
             myHero[1].becomeInvencible();
             if(!soundBusted.isPlaying()){

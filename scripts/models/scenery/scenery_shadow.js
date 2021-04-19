@@ -14,7 +14,7 @@ class Shadow{
         image(this.image, this.x2, this.posY, this.largura, this.height);
     }
       
-    move(){
+    moveAxisX(){
         this.x1 = this.x1 - this.speed;
         this.x2 = this.x2 - this.speed;
         

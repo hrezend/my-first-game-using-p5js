@@ -1,4 +1,4 @@
-var timeOfSurvive = 30;
+var timeOfSurvive = tempoParaSobreviverNoEstagioDois;
 
 function decrementTimeOfSurvive(){
     if(currentScenery === 'secondStage' && timeOfSurvive > 0){

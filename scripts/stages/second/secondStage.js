@@ -17,7 +17,7 @@ class SecondStage{
         secondStageBamboo1 = new Shadow(imageSecondStageBamboo1, 5 , 0, 300, height);
         secondStageBamboo2 = new Shadow(imageSecondStageBamboo2, 8 , 0, 400, height);
         secondStageGround = new Shadow(imageSecondStageGround, 8, (75 * height) / 100, width + 100, height / 3);
-        secondStageBackground = new Scenery(imageSecondStageBackground, 4);
+        secondStageBackground = new Scenery(imageSecondStageBackground, 4, 1);
 
         const trapDatabase = new Trap(imageTrapDatabase, 15);
         const trapHtml = new Trap(imageTrapHtml, 15);
@@ -34,21 +34,14 @@ class SecondStage{
         traps.push(trapJava);
         traps.push(trapGit);
         randomTraps = Math.floor(Math.random() * traps.length);
-
-        for(let i = 0; i < myHero.length; i++){
-            myHero[i].filter(THRESHOLD);
-        }
-        for(let i = 0; i < traps.length; i++){
-            traps[i].filter(THRESHOLD);
-        }
     }
 
     draw(){
         secondStageBackground.show();
-        secondStageBackground.move();
+        secondStageBackground.moveAxisX();
 
         secondStageBamboo1.show();
-        secondStageBamboo1.move();
+        secondStageBamboo1.moveAxisX();
 
         //Mostra um inimigo em tela
         traps[randomTraps].show();
@@ -68,7 +61,6 @@ class SecondStage{
         }
         myHero[0].float();
 
-
         //Verifica se a tecla esta pressionada, para o heroi andar
         if( keyIsDown(65) ){ //KeyA
             myHero[0].walk('left');
@@ -80,10 +72,10 @@ class SecondStage{
         }
 
         secondStageGround.show();
-        secondStageGround.move();
+        secondStageGround.moveAxisX();
 
         secondStageBamboo2.show();
-        secondStageBamboo2.move();
+        secondStageBamboo2.moveAxisX();
 
         score.show();
         score.decrementPoints(0.1);
