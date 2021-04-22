@@ -52,14 +52,34 @@ class SecondStage{
             traps[randomTraps].nextTrap();
         }
 
-        //Mostra outro inimigo em tela
-        traps[randomTraps].show();
-
         //Mostra o sprite atual do heroi
         if(myHero[0].amountJumps < 2){
             myHero[currentHero].show();
         }
         myHero[0].float();
+
+        //Verifica se o nosso heroi esta colidindo com uma armadilha, dando a ele invencibilidade, e o efeito visual de colisão
+        if(myHero[currentHero].invencible){
+            myHero[0].filter(INVERT);
+            myHero[1].filter(INVERT);
+            flagBlink++;
+        }
+        else{
+            if(flagBlink % 2 != 0){
+                myHero[0].filter(INVERT);
+                myHero[1].filter(INVERT);
+                flagBlink = 0;
+            }
+        }
+
+        if(myHero[currentHero].collidingWithTrap(traps[randomTraps])){
+            score.decrementPoints(pontosPerdidosAoColidirComTrap);
+            myHero[0].becomeInvencible();
+            myHero[1].becomeInvencible();
+            if(!soundBusted.isPlaying()){
+                soundBusted.play();
+            }
+        }
 
         //Verifica se a tecla esta pressionada, para o heroi andar
         if( keyIsDown(65) ){ //KeyA
@@ -78,7 +98,7 @@ class SecondStage{
         secondStageBamboo2.moveAxisX();
 
         score.show();
-        score.decrementPoints(0.1);
+        score.decrementPoints(pontosPerdidosAoDecorrerDoTempo);
 
         //O jogador deve sobreviver nessa fase por 30 segundos e manter a pontuação maior que 300
         if(timeOfSurvive <= 0){
@@ -101,7 +121,7 @@ class SecondStage{
     }
 
     _changeScenery(){
-        if(score.points >= 300){
+        if(score.points > 300){
             currentScenery = 'secondStageFinish';
             sceneries[currentScenery].setup();
             countWarning = 0; 
@@ -116,12 +136,12 @@ class SecondStage{
 
     _drawTime(){
         textFont(fontHanaleiFill);
-        textSize(44);
+        textSize(34);
         fill('#000');
         stroke('#d82b00');
         strokeWeight(2);
         textAlign(CENTER);
-        text(`Sobreviva por ${timeOfSurvive} segundos...`, width / 2, 35);
+        text(`Sobreviva por ${timeOfSurvive} segundos... Sua pontuação deve continuar maior que 300!`, width / 2, 35);
     }
 
 }

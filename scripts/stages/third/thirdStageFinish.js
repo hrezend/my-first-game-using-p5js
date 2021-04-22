@@ -20,10 +20,10 @@ class ThirdStageFinish{
         if(flagIntroIsEnding == false){
             if(txtalfa > 255){
                 flagTime++;
-                let numSec = 2;
+                let numSec = multiplicadorMinimoParaTempoDeCadaFraseNasTransicoes;
 
                 if(text_intro[text_indice].length > 100){
-                    numSec = 3;
+                    numSec = multiplicadorMaximoParaTempoDeCadaFraseNasTransicoes;
                 }
                 if(flagTime % (fpsGame * numSec) == 0){
                     txtalfa = 255;
@@ -39,7 +39,7 @@ class ThirdStageFinish{
         }
         else{
             fill(128 + sin(frameCount * 0.1) * 128);
-            text("Pressione F5 para jogar novamente", 0.5*width, 0.8*height);
+            text("Pressione 'F5' para jogar novamente!", 0.5*width, 0.8*height);
             fill(0, 0, 0);
 
             if(txtalfa > 255){

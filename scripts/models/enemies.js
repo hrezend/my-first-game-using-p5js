@@ -29,7 +29,7 @@ class Enemy extends Animation{
 
     hited(skill){
         noFill();
-        const precision = .7
+        const precision = 0.7;
         const colisao = collideRectRect(
             this.x,
             this.y,

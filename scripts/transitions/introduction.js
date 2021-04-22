@@ -20,10 +20,10 @@ class Introduction{
         if(flagIntroIsEnding == false){
             if(txtalfa > 255){
                 flagTime++;
-                let numSec = 2;
+                let numSec = multiplicadorMinimoParaTempoDeCadaFraseNasTransicoes;
 
                 if(text_intro[text_indice].length > 100){
-                    numSec = 4;
+                    numSec = multiplicadorMaximoParaTempoDeCadaFraseNasTransicoes;
                 }
                 if(flagTime % (fpsGame * numSec) == 0){
                     txtalfa = 255;
@@ -60,7 +60,8 @@ class Introduction{
         if(text_indice > 0 && (text_indice != text_intro.length-1)){
             fill(0);
             textSize(28);
-            text('Pressione ESC para pular a Introdução', 0.5*width, 0.95*height);
+            text("Novos comandos liberados! Pressione 'Espaço' para pular; Pressione 'Espaço' duas vezes para pulo duplo; Pressione 'F' para lançar cargas de conhecimento;", 0.25 * width, 0.7 * height, 0.5 * width, 0.5 * height);
+            text("Pressione 'ESC' para pular esta introdução.", 0.5*width, 0.95*height);
         }
 
         if(keyIsPressed && (text_indice > 0)){
@@ -69,7 +70,7 @@ class Introduction{
 
         if(flagIntroIsEnding == true){
             flagTime++;
-            if(flagTime > (fpsGame*3)){
+            if(flagTime > (fpsGame * multiplicadorParaLiberarAsFuncoesDeKeyCode)){
                 if(keyIsPressed){
                     this._changeScenery(keyCode,key);
                 }

@@ -20,10 +20,10 @@ class SecondStageFinish{
         if(flagIntroIsEnding == false){
             if(txtalfa > 255){
                 flagTime++;
-                let numSec = 2;
+                let numSec = multiplicadorMinimoParaTempoDeCadaFraseNasTransicoes;
 
                 if(text_intro[text_indice].length > 100){
-                    numSec = 3;
+                    numSec = multiplicadorMaximoParaTempoDeCadaFraseNasTransicoes;
                 }
                 if(flagTime % (fpsGame * numSec) == 0){
                     txtalfa = 255;
@@ -39,7 +39,7 @@ class SecondStageFinish{
         }
         else{
             fill(128 + sin(frameCount * 0.1) * 128);
-            text("Pressione ENTER para continuar", 0.5*width, 0.8*height);
+            text("Pressione ENTER para continuar.", 0.5*width, 0.8*height);
             fill(0, 0, 0);
 
             if(txtalfa > 255){
@@ -78,13 +78,14 @@ class SecondStageFinish{
 
     _changeScenery(keyCode, key){
         if(keyCode === 13 || keyCode === 27){ //ESC (27) e Enter (13)
-            currentScenery = 'thirdStage';
+            currentScenery = 'thirdStageIntroductionBoss';
             sceneries[currentScenery].setup();
             flagTime = 0;
             flagIntroIsEnding = false;
             txtalfa = 0;
             txtalfax = 1;
             text_indice = 0;
+            myHero[0].x = 0;
         }
     }
 }

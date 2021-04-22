@@ -56,6 +56,16 @@ class Hero extends Animation{
         }
     }
 
+    move(limite){
+        if(this.x < limite){
+            this.x += this.speedWalk;
+        }
+        else{
+            myHero[3].x = myHero[0].x;
+            currentHero = 3;
+        }
+    }
+
     float(){
         if(this.amountJumps == 2){
             myHero[1].x = myHero[0].x;
@@ -81,7 +91,7 @@ class Hero extends Animation{
         }, 1000);
     }
 
-    colliding(enemy){
+    collidingWithEnemy(enemy){
         if(this.invencible){
             return false;
         }
@@ -127,4 +137,26 @@ class Hero extends Animation{
         }
         return false;
     }
+
+    collidingWithTrap(trap){
+        if(this.invencible){
+            return false;
+        }
+
+        noFill();
+        const precision = 0.8;
+        const colisao = collideRectRect(
+            this.x + 15,
+            this.y,
+            this.widthOfSprite * precision,
+            this.heightOfSprit * precision,
+            trap.x,
+            trap.y,
+            100,
+            100
+        );
+        return colisao;
+    }
+
+    //fim da classe
 }

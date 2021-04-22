@@ -8,7 +8,8 @@ class NewGame{
     setup(){
         //Crio o Menu com os botões gerenciadores
         if(!soundMenu.isLooping()){
-            soundMenu.loop();   
+            soundMenu.loop();
+            soundMenu.setVolume(0.3);   
         }
         buttonMenuToIntroduction = new ButtonMenuToIntroduction('New Game', 0, 0);
         buttonInstructions = new ButtonInstructions('Instructions', 0, 0);
@@ -18,9 +19,11 @@ class NewGame{
         const myHeroRunningRight = new Hero(matriz_hero_running_right, imageHeroRunRight, 0, 20, 175, 200, 251, 324);
         const myHeroRunningLeft = new Hero(matriz_hero_running_left, imageHeroRunLeft, 0, 20, 175, 200, 251, 324);
         const myHeroJumping = new Hero(matriz_hero_jumping, imageHeroJump, 0, 20, 175, 200, 240, 240);
+        const myHeroStoped = new Hero(matriz_hero_stoped, imageHeroStoped, 0, 20, 200, 290, 200, 290);
         myHero.push(myHeroRunningRight);
         myHero.push(myHeroJumping);
         myHero.push(myHeroRunningLeft);
+        myHero.push(myHeroStoped);
 
         //Crio todas as instâncias de skills do meu herói
         books = new Books(5, 5);

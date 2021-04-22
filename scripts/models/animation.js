@@ -12,13 +12,13 @@ class Animation{
         this.currentFrame = 0;
     }
 
+    filter(param){
+        this.image.filter(param);
+    }
+
     show(){
         image(this.image, this.x, this.y, this.widthOfSprite, this.heightOfSprit, this.matriz[this.currentFrame][0], this.matriz[this.currentFrame][1], this.widthInSprite, this.heightInSprite);
         this.animate();
-    }
-
-    filter(param){
-        this.image.filter(param);
     }
 
     animate(){
@@ -27,5 +27,4 @@ class Animation{
             this.currentFrame = 0;
         }
     }
-    
 }

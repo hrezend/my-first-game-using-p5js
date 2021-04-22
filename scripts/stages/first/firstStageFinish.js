@@ -20,10 +20,10 @@ class FirstStageFinish{
         if(flagIntroIsEnding == false){
             if(txtalfa > 255){
                 flagTime++;
-                let numSec = 2;
+                let numSec = multiplicadorMinimoParaTempoDeCadaFraseNasTransicoes;
 
                 if(text_intro[text_indice].length > 100){
-                    numSec = 3;
+                    numSec = multiplicadorMaximoParaTempoDeCadaFraseNasTransicoes;
                 }
                 if(flagTime % (fpsGame * numSec) == 0){
                     txtalfa = 255;
@@ -39,7 +39,7 @@ class FirstStageFinish{
         }
         else{
             fill(128 + sin(frameCount * 0.1) * 128);
-            text("Pressione ENTER para continuar", 0.5*width, 0.8*height);
+            text("Pressione ENTER para continuar.", 0.5*width, 0.8*height);
             fill(0, 0, 0);
 
             if(txtalfa > 255){
@@ -57,13 +57,20 @@ class FirstStageFinish{
 
         text(text_intro[text_indice], width / 4.5, height / 4, 0.6 * width, 0.4 * height);
 
+        if(text_indice > 0 && (text_indice != text_intro.length-1)){
+            fill(0);
+            textSize(28);
+            text("Novos comandos liberados. Pressione 'A' e 'D' para correr para frente e para trás!", 0.25 * width, 0.75 * height, 0.5 * width, 0.5 * height);
+            text("Pressione 'ESC' para pular esta transição.", 0.5*width, 0.95*height);
+        }
+
         if(keyIsPressed && (text_indice > 0)){
             this._changeScenery(keyCode, key);
         }
 
         if(flagIntroIsEnding == true){
             flagTime++;
-            if(flagTime > (fpsGame*1)){
+            if(flagTime > (fpsGame * multiplicadorParaLiberarAsFuncoesDeKeyCode)){
                 if(keyIsPressed){
                     this._changeScenery(keyCode,key);
                 }
@@ -85,6 +92,7 @@ class FirstStageFinish{
             txtalfa = 0;
             txtalfax = 1;
             text_indice = 0;
+            myHero[0].x = 0;
         }
     }
 }

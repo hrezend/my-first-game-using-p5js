@@ -5,6 +5,10 @@ let flagIntroIsEnding = false;
 let flagTime = 0;
 let txtalfa = 0, txtalfax = 1;
 
+//Variaveis que configuram a tela de Introdução do Boss (fase 3)
+let txt1, txtaux, txtaux2, tamcx1, txtcount = 0, frmcount = 0;
+let showStart = false;
+
 //Variavel que faz a contagem de tempo que um aviso fica na tela
 let countWarning = 0;
 
@@ -54,6 +58,7 @@ let imageEletric;
 let imageHeroRunRight;
 let imageHeroRunLeft;
 let imageHeroJump;
+let imageHeroStoped;
 
 //Variaveis que recebem as sprites dos monstros do jogo
 let imageEnemyThief;
@@ -67,6 +72,7 @@ let imageEnemyTrollSpotify;
 let imageEnemyTrollSnapchat;
 let imageEnemyTrollGoogle;
 let imageEnemyTrollAmazon;
+let imageEnemyBossMark;
 
 //Variaveis que recebem as imagens dos marcadores de progresso
 let imageMarkerProgressZumbi;
@@ -115,6 +121,14 @@ let randomTraps;
 let flagInvencible = false;
 let flagRunning = true;
 let flagBlink = 0;
+
+const matriz_boss_mark = [
+    [0, 0]
+];
+
+const matriz_hero_stoped = [
+    [0, 0]
+];
 
 const matriz_hero_running_right = [
     [41, 38],

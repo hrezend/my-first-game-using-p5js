@@ -6,6 +6,7 @@ class FirstStage{
         if(keyCode === 70) {//KeyF
             if(books.amount != 0) {
                 myHero[currentHero].attack();
+                score.decrementPoints(pontosPerdidosAoUsarHabilidade);
             }
         }
         if(keyCode === 80){ //KeyP
@@ -23,6 +24,7 @@ class FirstStage{
     setup(){
         soundMenu.stop();
         soundGame.loop();
+        soundGame.setVolume(0.2);
 
         firstStageScenerySun = new Scenery(imagefirstStageSun, 0.1, 0.1);
         firstStageSceneryParalax = new Scenery(imagefirstStageParalax, 4, 1);
@@ -39,6 +41,7 @@ class FirstStage{
         const troll_spotify = new Enemy(matriz_troll, imageEnemyTrollSpotify, width, -30, 400, 400, 400, 400, 20);
         const troll_amazon = new Enemy(matriz_troll, imageEnemyTrollAmazon, width, -30, 400, 400, 400, 400, 20);
         const troll_google = new Enemy(matriz_troll, imageEnemyTrollGoogle, width, -30, 400, 400, 400, 400, 20);
+        const zoombie = new Enemy(matriz_zoombie, imageEnemyZoombie, width, 0, 160, 250, 320, 500, 25);
         enemies.push(thief);
         enemies.push(troll_facebook);
         enemies.push(troll_tiktok);
@@ -49,6 +52,7 @@ class FirstStage{
         enemies.push(troll_snapchat);
         enemies.push(troll_amazon);
         enemies.push(troll_google);
+        enemies.push(zoombie);
 
         randomEnemy = Math.floor(Math.random() * enemies.length);
     }
@@ -121,7 +125,7 @@ class FirstStage{
             }
         }
 
-        if(myHero[currentHero].colliding(enemies[randomEnemy])){
+        if(myHero[currentHero].collidingWithEnemy(enemies[randomEnemy])){
             score.decrementPoints(pontosPerdidosAoColidirComInimigo);
             myHero[0].becomeInvencible();
             myHero[1].becomeInvencible();

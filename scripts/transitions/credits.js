@@ -16,7 +16,7 @@ class Credits{
         text("CREDITS", width * 0.5, height * 0.2);
 
         textLeading(35);
-        text("MATA68 - PROJECT\nDiscentes: Hérson Rezende, João Gabriel e Djair Maykon \n\nContact: herson.reis@ufba.br", width * 0.5, height * 0.3);
+        text("MATA68 - PROJECT\nDiscentes: Hérson Rezende, João Gabriel e Djair Maykon \n\nContact:\nherson.reis@ufba.br", width * 0.5, height * 0.3);
         
         stroke('#d82b00');
         strokeWeight(2);
@@ -24,7 +24,7 @@ class Credits{
         text("Presssione ESC para voltar ao menu principal", 0.5 * width, 0.9 * height);
 
         flagTime++;
-        if( flagTime > (fpsGame * 2) ){
+        if( flagTime > (fpsGame * multiplicadorParaLiberarAsFuncoesDeKeyCode) ){
             if(keyIsPressed){
                 this._changeScenery(keyCode, key);
             }

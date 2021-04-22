@@ -24,7 +24,7 @@ class Books{
     }
 
     incrementAmount(){
-        if(this.amount <= this.maximo){
+        if(this.amount < this.maximo){
             this.amount++;
         }
     }

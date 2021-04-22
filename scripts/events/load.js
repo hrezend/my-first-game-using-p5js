@@ -35,6 +35,7 @@ function preload(){
     imageHeroRunRight = loadImage('../images/hero/hero_run_right.png');
     imageHeroRunLeft = loadImage('../images/hero/hero_run_left.png');
     imageHeroJump = loadImage('../images/hero/hero_jump.png');
+    imageHeroStoped = loadImage('../images/hero/hero_stoped.png');
 
     imageBook = loadImage('../images/skills/book.png');
     imageBookBlocked = loadImage('../images/skills/book_blocked.png');
@@ -51,6 +52,7 @@ function preload(){
     imageEnemyTrollSnapchat = loadImage('../images/enemies/troll_snapchat.png');
     imageEnemyTrollGoogle = loadImage('../images/enemies/troll_google.png');
     imageEnemyTrollAmazon = loadImage('../images/enemies/troll_amazon.png');
+    imageEnemyBossMark = loadImage('../images/enemies/boss_mark.png');
 
     imageTrapDatabase = loadImage('../images/traps/database.png');
     imageTrapHtml = loadImage('../images/traps/html.png');
