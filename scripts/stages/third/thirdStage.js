@@ -31,8 +31,13 @@ class ThirdStage{
         thirdStageBackground.moveAxisX();
 
         //Mostra o inimigo em tela
-        bosses[currentBoss].show();
-        bosses[currentBoss].notHide();
+        if(flagBossHited){
+            this._bossHited();
+        }
+        else{
+            bosses[currentBoss].show();
+            bosses[currentBoss].notHide();
+        }
 
         //Mostra o heroi em tela
         myHero[3].show();
@@ -51,13 +56,10 @@ class ThirdStage{
                 bulletsEletric.splice(i, 1);
             }
             if(bosses[currentBoss].hited(blt)){
-                bosses[currentBoss].hide();
-                soundEnemyHited.play();
+                soundExplosion.play();
                 bulletsEletric.splice(i, 1);
                 score.points = 1000;
-                setInterval(() => {
-                    this._changeScenery();
-                }, 3000);
+                flagBossHited = true;
             }
             
             blt.show();
@@ -86,5 +88,13 @@ class ThirdStage{
         text_indice = 0;
         myHero[0].x = 0;
         currentHero = 0;
+    }
+
+    _bossHited(){
+        bosses[currentBoss].hide();
+        image(imageEnemyBossMarkDerrotado, width-285, 0, 570, 1310);
+        setInterval(() => {
+            this._changeScenery();
+        }, 1500);
     }
 }

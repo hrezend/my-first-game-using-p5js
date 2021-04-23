@@ -30,6 +30,7 @@ let soundEletric;
 let soundCasting;
 let soundEnemyHited;
 let soundBusted;
+let soundExplosion;
 
 //Variavel que recebe a imagem do menu do jogo
 let imageMenu;
@@ -62,7 +63,8 @@ let imageHeroStoped;
 
 //Variaveis que recebem as sprites dos monstros do jogo
 let imageEnemyThief;
-let imageEnemyZoombie;
+let imageEnemyZoombieM;
+let imageEnemyZoombieF;
 let imageEnemyTrollFacebook;
 let imageEnemyTrollTiktok;
 let imageEnemyTrollTwitter;
@@ -73,6 +75,7 @@ let imageEnemyTrollSnapchat;
 let imageEnemyTrollGoogle;
 let imageEnemyTrollAmazon;
 let imageEnemyBossMark;
+let imageEnemyBossMarkDerrotado;
 
 //Variaveis que recebem as imagens dos marcadores de progresso
 let imageMarkerProgressZumbi;
@@ -118,6 +121,7 @@ let currentBoss;
 const traps = [];
 let randomTraps;
 
+let flagBossHited = false;
 let flagInvencible = false;
 let flagRunning = true;
 let flagBlink = 0;
@@ -225,7 +229,7 @@ const matriz_troll = [
     [800, 2000]
 ];
 
-const matriz_zoombie = [
+const matriz_zoombie_male = [
     [1372, 512],
     [1050, 512],
     [720, 512],
@@ -236,4 +240,17 @@ const matriz_zoombie = [
     [717, 0],
     [386, 0],
     [57, 0]
+];
+
+const matriz_zoombie_female = [
+    [1979, 0],
+    [1485, 0],
+    [1004, 0],
+    [504, 0],
+    [22, 0],
+    [1979, 620],
+    [1495, 622],
+    [1001, 624],
+    [502, 623],
+    [26, 617]
 ];

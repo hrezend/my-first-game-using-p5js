@@ -41,7 +41,8 @@ class FirstStage{
         const troll_spotify = new Enemy(matriz_troll, imageEnemyTrollSpotify, width, -30, 400, 400, 400, 400, 20);
         const troll_amazon = new Enemy(matriz_troll, imageEnemyTrollAmazon, width, -30, 400, 400, 400, 400, 20);
         const troll_google = new Enemy(matriz_troll, imageEnemyTrollGoogle, width, -30, 400, 400, 400, 400, 20);
-        const zoombie = new Enemy(matriz_zoombie, imageEnemyZoombie, width, 0, 160, 250, 320, 500, 25);
+        const zoombieM = new Enemy(matriz_zoombie_male, imageEnemyZoombieM, width, 0, 160, 250, 320, 500, 25);
+        const zoombieF = new Enemy(matriz_zoombie_female, imageEnemyZoombieF, width, 0, 160, 250, 425, 545, 25);
         enemies.push(thief);
         enemies.push(troll_facebook);
         enemies.push(troll_tiktok);
@@ -52,7 +53,8 @@ class FirstStage{
         enemies.push(troll_snapchat);
         enemies.push(troll_amazon);
         enemies.push(troll_google);
-        enemies.push(zoombie);
+        enemies.push(zoombieM);
+        enemies.push(zoombieF);
 
         randomEnemy = Math.floor(Math.random() * enemies.length);
     }

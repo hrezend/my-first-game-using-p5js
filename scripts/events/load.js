@@ -14,6 +14,7 @@ function preload(){
     soundCasting = loadSound('../sounds/sound_arremesso.mp3');
     soundEnemyHited = loadSound('../sounds/sound_enemy_hited.mp3');
     soundBusted = loadSound('../sounds/sound_busted.mp3');
+    soundExplosion = loadSound('../sounds/sound_explosion.mp3');
 
     //Images
     imageMenu = loadImage('../images/scenery/menu.jpg');
@@ -42,7 +43,8 @@ function preload(){
     imageEletric = loadImage('../images/skills/eletric.png');
 
     imageEnemyThief = loadImage('../images/enemies/thief.png');
-    imageEnemyZoombie = loadImage('../images/enemies/zoombie.png');
+    imageEnemyZoombieM = loadImage('../images/enemies/zoombieM.png');
+    imageEnemyZoombieF = loadImage('../images/enemies/zoombieF.png');
     imageEnemyTrollFacebook = loadImage('../images/enemies/troll_facebook.png');
     imageEnemyTrollTiktok = loadImage('../images/enemies/troll_tiktok.png');
     imageEnemyTrollYoutube = loadImage('../images/enemies/troll_youtube.png');
@@ -53,6 +55,7 @@ function preload(){
     imageEnemyTrollGoogle = loadImage('../images/enemies/troll_google.png');
     imageEnemyTrollAmazon = loadImage('../images/enemies/troll_amazon.png');
     imageEnemyBossMark = loadImage('../images/enemies/boss_mark.png');
+    imageEnemyBossMarkDerrotado = loadImage('../images/enemies/boss_mark_derrotado.png');
 
     imageTrapDatabase = loadImage('../images/traps/database.png');
     imageTrapHtml = loadImage('../images/traps/html.png');
