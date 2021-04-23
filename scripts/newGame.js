@@ -1,8 +1,8 @@
 class NewGame{
-    keyPressed(){
+    keyPressed(key){
         if(keyCode === 13){//Enter
             console.log('Começando...');
-        };
+        }
     }
     
     setup(){

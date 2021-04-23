@@ -1,10 +1,12 @@
 class ThirdStageFinish{
     constructor(){}
 
-    keyPressed(){}
+    keyPressed(key){}
 
     setup(){
         text_intro = split("Parabéns!\nVocê guiou Xnowden até o sucesso...", '\n');
+        soundGame.stop();
+        //soundWinGame.play();
     }
 
     draw(){
@@ -20,10 +22,10 @@ class ThirdStageFinish{
         if(flagIntroIsEnding == false){
             if(txtalfa > 255){
                 flagTime++;
-                let numSec = multiplicadorMinimoParaTempoDeCadaFraseNasTransicoes;
+                let numSec = multiplicadorMinimoParaTempoDeCadaFraseNasTransicoes + 100;
 
                 if(text_intro[text_indice].length > 100){
-                    numSec = multiplicadorMaximoParaTempoDeCadaFraseNasTransicoes;
+                    numSec = multiplicadorMaximoParaTempoDeCadaFraseNasTransicoes + 100;
                 }
                 if(flagTime % (fpsGame * numSec) == 0){
                     txtalfa = 255;
@@ -77,8 +79,14 @@ class ThirdStageFinish{
     }
 
     _changeScenery(keyCode, key){
-        if(keyCode === 116){ //F5
-            window.location.reload();
-        }
+        currentScenery = 'fourthStage';
+        flagTime = 0;
+        txtalfa = 0;
+        txtalfax = 1;
+        frmcount = 0;
+        txtcount = 0;
+        showStart = false;
+        myHero[0].x = 0;
+        sceneries[currentScenery].setup(); 
     }
 }

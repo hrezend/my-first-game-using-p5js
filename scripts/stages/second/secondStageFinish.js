@@ -1,10 +1,14 @@
 class SecondStageFinish{
     constructor(){}
 
-    keyPressed(){}
+    keyPressed(key){}
 
     setup(){
         text_intro = split("Foi por pouco...\nXnowden escapou das armadilhas do Big-Boss!", '\n');
+
+        if(soundRunning.isLooping()){
+            soundRunning.stop();
+        }
     }
 
     draw(){

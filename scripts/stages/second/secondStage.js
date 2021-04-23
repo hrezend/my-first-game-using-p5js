@@ -1,19 +1,26 @@
 class SecondStage{
-    keyPressed(){
+    keyPressed(key){
         if(keyCode === 32){ //Space
             myHero[0].jump();
         }
         if(keyCode === 80){ //KeyP
             if(isLooping()){
+                soundGame.stop();
                 noLoop();
             }
             else{
+                soundGame.loop();
                 loop();
             }
         }
     }
 
     setup(){
+        if(!soundRunning.isLooping()){
+            soundRunning.loop();
+            soundRunning.setVolume(0.7);
+        }
+
         secondStageBamboo1 = new Shadow(imageSecondStageBamboo1, 5 , 0, 300, height);
         secondStageBamboo2 = new Shadow(imageSecondStageBamboo2, 8 , 0, 400, height);
         secondStageGround = new Shadow(imageSecondStageGround, 8, (75 * height) / 100, width + 100, height / 3);
@@ -37,6 +44,7 @@ class SecondStage{
     }
 
     draw(){
+        //Desenha o background do cenario
         secondStageBackground.show();
         secondStageBackground.moveAxisX();
 
@@ -117,20 +125,25 @@ class SecondStage{
         }
         
         this._drawTime();
+
+        //Quando o pause é ativado, desenha a imagem do pause
+        if(!isLooping()){
+            image(imagePauseSymbol, 60, 100, 80, 80);
+        }
         //fim do draw()
     }
 
     _changeScenery(){
         if(score.points > 300){
             currentScenery = 'secondStageFinish';
-            sceneries[currentScenery].setup();
             countWarning = 0; 
+            sceneries[currentScenery].setup();
         }
         else{
             currentScenery = 'firstStage';
-            sceneries[currentScenery].setup();
             score.points = 200;
             countWarning = 0;
+            sceneries[currentScenery].setup();
         }
     }
 

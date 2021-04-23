@@ -1,5 +1,5 @@
 class ThirdStage{
-    keyPressed(){
+    keyPressed(key){
         if(keyCode === 69){ //KeyE
             if(!myHero[currentHero].rechargingSpecialAttack){
                 myHero[currentHero].special_attack();
@@ -8,9 +8,11 @@ class ThirdStage{
         }
         if(keyCode === 80){ //KeyP
             if(isLooping()){
+                soundGame.stop();
                 noLoop();
             }
             else{
+                soundGame.loop();
                 loop();
             }
         }
@@ -30,6 +32,14 @@ class ThirdStage{
         thirdStageBackground.show();
         thirdStageBackground.moveAxisX();
 
+        //Mostra o heroi em tela
+        myHero[3].show();
+
+        //Mostra quando o herói pode usar sua habilidade especial
+        if(!myHero[currentHero].rechargingSpecialAttack){
+            this._drawWarning();
+        }
+
         //Mostra o inimigo em tela
         if(flagBossHited){
             this._bossHited();
@@ -37,14 +47,6 @@ class ThirdStage{
         else{
             bosses[currentBoss].show();
             bosses[currentBoss].notHide();
-        }
-
-        //Mostra o heroi em tela
-        myHero[3].show();
-
-        //Mostra quando o herói pode usar sua habilidade especial
-        if(!myHero[currentHero].rechargingSpecialAttack){
-            this._drawWarning();
         }
 
         //Faz o lançamento das balas
@@ -66,6 +68,11 @@ class ThirdStage{
         }
 
         score.show();
+
+        //Quando o pause é ativado, desenha a imagem do pause
+        if(!isLooping()){
+            image(imagePauseSymbol, 60, 100, 80, 80);
+        }
         //fim do draw()
     }
 
@@ -80,7 +87,6 @@ class ThirdStage{
 
     _changeScenery(keyCode, key){
         currentScenery = 'thirdStageFinish';
-        sceneries[currentScenery].setup();
         flagTime = 0;
         flagIntroIsEnding = false;
         txtalfa = 0;
@@ -88,6 +94,7 @@ class ThirdStage{
         text_indice = 0;
         myHero[0].x = 0;
         currentHero = 0;
+        sceneries[currentScenery].setup();
     }
 
     _bossHited(){

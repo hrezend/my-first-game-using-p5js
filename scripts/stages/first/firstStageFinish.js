@@ -1,10 +1,14 @@
 class FirstStageFinish{
     constructor(){}
 
-    keyPressed(){}
+    keyPressed(key){}
 
     setup(){
-        text_intro = split("Xnowden pressente o caos se aproximando\nEstaria ele sentindo o poder do big boss, que é mais de 8000?\nTalvez seja só uma armadilha...", '\n');
+        text_intro = split("Xnowden pressente o caos se aproximando.\nEstaria ele sentindo o poder do big boss, que é mais de 8000?\nTalvez seja só uma armadilha...", '\n');
+    
+        if(soundRunning.isLooping()){
+            soundRunning.stop();
+        }
     }
 
     draw(){
@@ -86,13 +90,13 @@ class FirstStageFinish{
     _changeScenery(keyCode, key){
         if(keyCode === 13 || keyCode === 27){ //ESC (27) e Enter (13)
             currentScenery = 'secondStage';
-            sceneries[currentScenery].setup();
             flagTime = 0;
             flagIntroIsEnding = false;
             txtalfa = 0;
             txtalfax = 1;
             text_indice = 0;
             myHero[0].x = 0;
+            sceneries[currentScenery].setup();
         }
     }
 }

@@ -1,5 +1,5 @@
 class FirstStage{
-    keyPressed(){
+    keyPressed(key){
         if(keyCode === 32){ //Space
             myHero[0].jump();
         }
@@ -25,6 +25,8 @@ class FirstStage{
         soundMenu.stop();
         soundGame.loop();
         soundGame.setVolume(0.2);
+        soundRunning.loop();
+        soundRunning.setVolume(0.7);
 
         firstStageScenerySun = new Scenery(imagefirstStageSun, 0.1, 0.1);
         firstStageSceneryParalax = new Scenery(imagefirstStageParalax, 4, 1);
@@ -154,7 +156,8 @@ class FirstStage{
         if(!isLooping()){
             image(imagePauseSymbol, 60, 100, 80, 80);
         }
-
+        
+        //fim do draw()
     }
 
     _changeScenery(){

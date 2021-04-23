@@ -1,5 +1,7 @@
 class ThirdStageIntroductionBoss{
     constructor(){}
+
+    keyPressed(key){}
   
     setup(){
         text_intro = 'Xnowden está chegando ao fim da sua jornada, quando...\nOh não, é o Big-Boss logo a frente!\nEle veio tomar para si todo o conhecimendo que nosso herói adquiriu.\nMas isso não abalará nosso herói!\nXnowden jamais desistirá de salvar sua nação!!!';
@@ -74,7 +76,6 @@ class ThirdStageIntroductionBoss{
     _changeScenery(keyCode, key){
         if(keyCode === 13 || keyCode === 27){ //ESC (27) e Enter (13)
             currentScenery = 'thirdStage';
-            sceneries[currentScenery].setup();
             flagTime = 0;
             txtalfa = 0;
             txtalfax = 1;
@@ -82,6 +83,7 @@ class ThirdStageIntroductionBoss{
             txtcount = 0;
             showStart = false;
             myHero[0].x = 0;
+            sceneries[currentScenery].setup();
         }
     }
   

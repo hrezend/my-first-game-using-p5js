@@ -15,6 +15,8 @@ function preload(){
     soundEnemyHited = loadSound('../sounds/sound_enemy_hited.mp3');
     soundBusted = loadSound('../sounds/sound_busted.mp3');
     soundExplosion = loadSound('../sounds/sound_explosion.mp3');
+    soundWinGame = loadSound('../sounds/sound_win.mp3');
+    soundRunning = loadSound('../sounds/sound_running.mp3');
 
     //Images
     imageMenu = loadImage('../images/scenery/menu.jpg');

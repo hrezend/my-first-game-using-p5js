@@ -31,6 +31,8 @@ let soundCasting;
 let soundEnemyHited;
 let soundBusted;
 let soundExplosion;
+let soundWinGame;
+let soundRunning;
 
 //Variavel que recebe a imagem do menu do jogo
 let imageMenu;
