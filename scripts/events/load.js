@@ -66,6 +66,7 @@ function preload(){
     imageTrapNode = loadImage('../images/traps/nodejs.png');
     imageTrapJava = loadImage('../images/traps/java.png');
     imageTrapGit = loadImage('../images/traps/git.png');
+    imageTrapJs = loadImage('../images/traps/js.png');
 
     imageMarkerProgressZumbi = loadImage('../images/progress/marker_zumbi.png');
     imageMarkerEistein = loadImage('../images/progress/marker_eistein.png');

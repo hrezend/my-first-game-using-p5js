@@ -26,19 +26,21 @@ class SecondStage{
         secondStageGround = new Shadow(imageSecondStageGround, 8, (75 * height) / 100, width + 100, height / 3);
         secondStageBackground = new Scenery(imageSecondStageBackground, 4, 1);
 
-        const trapDatabase = new Trap(imageTrapDatabase, 15);
-        const trapHtml = new Trap(imageTrapHtml, 15);
-        const trapCss = new Trap(imageTrapCss, 15);
-        const trapCpp = new Trap(imageTrapCpp, 15);
-        const trapNode = new Trap(imageTrapNode, 15);
-        const trapJava = new Trap(imageTrapJava, 15);
-        const trapGit = new Trap(imageTrapGit, 15);
+        const trapDatabase = new Trap(imageTrapDatabase, 20);
+        const trapHtml = new Trap(imageTrapHtml, 20);
+        const trapCss = new Trap(imageTrapCss, 20);
+        const trapCpp = new Trap(imageTrapCpp, 20);
+        const trapNode = new Trap(imageTrapNode, 20);
+        const trapJava = new Trap(imageTrapJava, 20);
+        const trapGit = new Trap(imageTrapGit, 20);
+        const trapJs = new Trap(imageTrapJs, 20);
         traps.push(trapDatabase);
         traps.push(trapHtml);
         traps.push(trapCss);
         traps.push(trapCpp);
         traps.push(trapNode);
         traps.push(trapJava);
+        traps.push(trapJs);
         traps.push(trapGit);
         randomTraps = Math.floor(Math.random() * traps.length);
     }
@@ -70,12 +72,14 @@ class SecondStage{
         if(myHero[currentHero].invencible){
             myHero[0].filter(INVERT);
             myHero[1].filter(INVERT);
+            myHero[2].filter(INVERT);
             flagBlink++;
         }
         else{
             if(flagBlink % 2 != 0){
                 myHero[0].filter(INVERT);
                 myHero[1].filter(INVERT);
+                myHero[2].filter(INVERT);
                 flagBlink = 0;
             }
         }
@@ -84,6 +88,7 @@ class SecondStage{
             score.decrementPoints(pontosPerdidosAoColidirComTrap);
             myHero[0].becomeInvencible();
             myHero[1].becomeInvencible();
+            myHero[2].becomeInvencible();
             if(!soundBusted.isPlaying()){
                 soundBusted.play();
             }
