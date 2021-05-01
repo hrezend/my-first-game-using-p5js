@@ -110,7 +110,7 @@ class SecondStage{
 
         //O jogador deve sobreviver nessa fase por 30 segundos e manter a pontuação maior que 300
         if(timeOfSurvive <= 0){
-            if(countWarning < (fpsGame * 5)){
+            if(countWarning < (fpsGame * multiplicadorDeTempoParaMostrarMensagemDeMudancaDeFase)){
                 textAlign(CENTER);
                 fill(128 + sin(frameCount * 0.1) * 128);
                 stroke('#d82b00');

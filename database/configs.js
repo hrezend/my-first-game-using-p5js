@@ -10,3 +10,4 @@ let pontosGanhosAoDerrotarInimigoComum = 30;
 let multiplicadorMinimoParaTempoDeCadaFraseNasTransicoes = 2;
 let multiplicadorMaximoParaTempoDeCadaFraseNasTransicoes = 4;
 let multiplicadorParaLiberarAsFuncoesDeKeyCode = 2;
+let multiplicadorDeTempoParaMostrarMensagemDeMudancaDeFase = 5;

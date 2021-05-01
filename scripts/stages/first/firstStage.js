@@ -161,7 +161,7 @@ class FirstStage{
     }
 
     _changeScenery(){
-        if(countWarning < (fpsGame * 5)){
+        if(countWarning < (fpsGame * multiplicadorDeTempoParaMostrarMensagemDeMudancaDeFase)){
             textAlign(CENTER);
             fill(128 + sin(frameCount * 0.1) * 128);
             stroke('#d82b00');

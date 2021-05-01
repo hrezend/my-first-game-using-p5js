@@ -65,7 +65,7 @@ class ThirdStageFinish{
 
         if(flagIntroIsEnding == true){
             flagTime++;
-            if(flagTime > (fpsGame*1)){
+            if(flagTime > (fpsGame * multiplicadorParaLiberarAsFuncoesDeKeyCode)){
                 if(keyIsPressed){
                     this._changeScenery(keyCode,key);
                 }
@@ -79,7 +79,6 @@ class ThirdStageFinish{
     }
 
     _changeScenery(keyCode, key){
-        currentScenery = 'fourthStage';
         flagTime = 0;
         txtalfa = 0;
         txtalfax = 1;
@@ -87,6 +86,7 @@ class ThirdStageFinish{
         txtcount = 0;
         showStart = false;
         myHero[0].x = 0;
+        currentScenery = 'fourthStage';
         sceneries[currentScenery].setup(); 
     }
 }

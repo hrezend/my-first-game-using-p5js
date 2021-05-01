@@ -59,6 +59,7 @@ class ThirdStage{
             }
             if(bosses[currentBoss].hited(blt)){
                 soundExplosion.play();
+                soundWinGame.play();
                 bulletsEletric.splice(i, 1);
                 score.points = 1000;
                 flagBossHited = true;
