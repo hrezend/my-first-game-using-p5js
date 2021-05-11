@@ -21,7 +21,7 @@ class Instructions{
         stroke('#d82b00');
         strokeWeight(2);
         fill(128 + sin(frameCount * 0.1) * 128);
-        text("Presssione ESC para voltar ao menu principal", 0.5 * width, 0.9 * height);
+        text("Presssione ESC para voltar ao menu principal", 0.5 * width, 0.95 * height);
 
         flagTime++;
         if( flagTime > (fpsGame * multiplicadorParaLiberarAsFuncoesDeKeyCode) ){

@@ -63,6 +63,14 @@ let imageHeroRunLeft;
 let imageHeroJump;
 let imageHeroStoped;
 
+//Variaveis dos icones de acao
+let imageJump;
+let imageJumpBlocked;
+let imageMove;
+let imageMoveBlocked;
+let imagePressF;
+let imagePressFBlocked;
+
 //Variaveis que recebem as sprites dos monstros do jogo
 let imageEnemyThief;
 let imageEnemyZoombieM;
@@ -122,6 +130,9 @@ let currentBoss;
 
 const traps = [];
 let randomTraps;
+
+const obstacles = [];
+let randomObstacles;
 
 let flagBossHited = false;
 let flagInvencible = false;

@@ -158,5 +158,25 @@ class Hero extends Animation{
         return colisao;
     }
 
+    collidingWithObstacle(obs){
+        if(this.invencible){
+            return false;
+        }
+
+        noFill();
+        const precision = 0.8;
+        const colisao = collideRectRect(
+            this.x + 15,
+            this.y,
+            this.widthOfSprite * precision,
+            this.heightOfSprit * precision,
+            obs.x,
+            obs.y,
+            100,
+            100
+        );
+        return colisao;
+    }
+
     //fim da classe
 }

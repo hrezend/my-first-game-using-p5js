@@ -71,4 +71,11 @@ function preload(){
     imageMarkerProgressZumbi = loadImage('../images/progress/marker_zumbi.png');
     imageMarkerEistein = loadImage('../images/progress/marker_eistein.png');
     imageMarkerBrain = loadImage('../images/progress/marker_cerebro.png');
+
+    imageMove = loadImage('../images/actions/move.png');
+    imageMoveBlocked = loadImage('../images/actions/move_blocked.png');
+    imageJump = loadImage('../images/actions/jump.png');
+    imageJumpBlocked = loadImage('../images/actions/jump_blocked.png');
+    imagePressF = loadImage('../images/actions/press_f.png');
+    imagePressFBlocked = loadImage('../images/actions/press_f_blocked.png');
 }

@@ -156,6 +156,11 @@ class FirstStage{
         if(!isLooping()){
             image(imagePauseSymbol, 60, 100, 80, 80);
         }
+
+        //Desenha em tela os comandos disponíveis para aquela fase
+        image(imageMoveBlocked, width - 75, 30, 75, 75);
+        image(imageJump, width - 150, 30, 75, 75);
+        image(imagePressF, width - 225, 30, 75, 75);
         
         //fim do draw()
     }

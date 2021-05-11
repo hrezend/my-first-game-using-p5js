@@ -26,6 +26,7 @@ class SecondStage{
         secondStageGround = new Shadow(imageSecondStageGround, 8, (75 * height) / 100, width + 100, height / 3);
         secondStageBackground = new Scenery(imageSecondStageBackground, 4, 1);
 
+        //traps
         const trapDatabase = new Trap(imageTrapDatabase, 20);
         const trapHtml = new Trap(imageTrapHtml, 20);
         const trapCss = new Trap(imageTrapCss, 20);
@@ -43,6 +44,25 @@ class SecondStage{
         traps.push(trapJs);
         traps.push(trapGit);
         randomTraps = Math.floor(Math.random() * traps.length);
+
+        //obstacles
+        const obstacleDatabase = new Obstacle(imageTrapDatabase, 20);
+        const obstacleHtml = new Obstacle(imageTrapHtml, 20);
+        const obstacleCss = new Obstacle(imageTrapCss, 20);
+        const obstacleCpp = new Obstacle(imageTrapCpp, 20);
+        const obstacleNode = new Obstacle(imageTrapNode, 20);
+        const obstacleJava = new Obstacle(imageTrapJava, 20);
+        const obstacleGit = new Obstacle(imageTrapGit, 20);
+        const obstacleJs = new Obstacle(imageTrapJs, 20);
+        obstacles.push(obstacleDatabase);
+        obstacles.push(obstacleHtml);
+        obstacles.push(obstacleCss);
+        obstacles.push(obstacleCpp);
+        obstacles.push(obstacleNode);
+        obstacles.push(obstacleJava);
+        obstacles.push(obstacleGit);
+        obstacles.push(obstacleJs);
+        randomObstacles = Math.floor(Math.random() * obstacles.length);
     }
 
     draw(){
@@ -53,13 +73,22 @@ class SecondStage{
         secondStageBamboo1.show();
         secondStageBamboo1.moveAxisX();
 
-        //Mostra um inimigo em tela
+        //Mostra uma trap em tela
         traps[randomTraps].show();
 
-        //Assim que um inimigo fica visivel, outro eh escolhido para ser o proximo
+        //Assim que uma trap fica visivel, outro eh escolhido para ser o proximo
         if(traps[randomTraps].visible()){
             randomTraps = Math.floor(Math.random() * traps.length);
             traps[randomTraps].nextTrap();
+        }
+
+        //Mostra um obstaculo em tela
+        obstacles[randomObstacles].show();
+
+        //Assim que um obstaculo fica visivel, outro eh escolhido para ser o proximo
+        if(obstacles[randomObstacles].visible()){
+            randomObstacles = Math.floor(Math.random() * obstacles.length);
+            obstacles[randomObstacles].nextObstacle();
         }
 
         //Mostra o sprite atual do heroi
@@ -86,6 +115,16 @@ class SecondStage{
 
         if(myHero[currentHero].collidingWithTrap(traps[randomTraps])){
             score.decrementPoints(pontosPerdidosAoColidirComTrap);
+            myHero[0].becomeInvencible();
+            myHero[1].becomeInvencible();
+            myHero[2].becomeInvencible();
+            if(!soundBusted.isPlaying()){
+                soundBusted.play();
+            }
+        }
+
+        if(myHero[currentHero].collidingWithObstacle(obstacles[randomObstacles])){
+            score.decrementPoints(pontosPerdidosAoColidirComObstaculo);
             myHero[0].becomeInvencible();
             myHero[1].becomeInvencible();
             myHero[2].becomeInvencible();
@@ -135,6 +174,12 @@ class SecondStage{
         if(!isLooping()){
             image(imagePauseSymbol, 60, 100, 80, 80);
         }
+
+        //Desenha em tela os comandos disponíveis para aquela fase
+        image(imageMove, width - 75, 30, 75, 75);
+        image(imageJump, width - 150, 30, 75, 75);
+        image(imagePressFBlocked, width - 225, 30, 75, 75);
+
         //fim do draw()
     }
 
@@ -148,6 +193,7 @@ class SecondStage{
             currentScenery = 'firstStage';
             score.points = 200;
             countWarning = 0;
+            myHero[0].x = 0;
             sceneries[currentScenery].setup();
         }
     }

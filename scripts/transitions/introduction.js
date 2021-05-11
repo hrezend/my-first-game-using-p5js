@@ -60,7 +60,6 @@ class Introduction{
         if(text_indice > 0 && (text_indice != text_intro.length-1)){
             fill(0);
             textSize(28);
-            text("Novos comandos liberados! Pressione 'Espaço' para pular; Pressione 'Espaço' duas vezes para pulo duplo; Pressione 'F' para lançar cargas de conhecimento;", 0.25 * width, 0.7 * height, 0.5 * width, 0.5 * height);
             text("Pressione 'ESC' para pular esta introdução.", 0.5*width, 0.95*height);
         }
 

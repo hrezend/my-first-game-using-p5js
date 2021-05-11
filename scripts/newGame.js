@@ -53,7 +53,7 @@ class NewGame{
     }
 
     _button(){
-        buttonMenuToIntroduction.y = height / 1.24;
+        buttonMenuToIntroduction.y = height / 1.25;
         buttonMenuToIntroduction.x = width / 1.25;
         buttonMenuToIntroduction.draw();
 

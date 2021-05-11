@@ -64,7 +64,6 @@ class FirstStageFinish{
         if(text_indice > 0 && (text_indice != text_intro.length-1)){
             fill(0);
             textSize(28);
-            text("Novos comandos liberados. Pressione 'A' e 'D' para correr para frente e para trás!", 0.25 * width, 0.75 * height, 0.5 * width, 0.5 * height);
             text("Pressione 'ESC' para pular esta transição.", 0.5*width, 0.95*height);
         }
 

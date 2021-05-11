@@ -16,7 +16,7 @@ class Credits{
         text("CREDITS", width * 0.5, height * 0.2);
 
         textLeading(35);
-        text("MATA68 - PROJECT\nDiscentes: Hérson Rezende, João Gabriel e Djair Maykon \n\nContact:\nherson.reis@ufba.br", width * 0.5, height * 0.3);
+        text("MATA68 - PROJECT\nDiscentes: Hérson Rezende, João Gabriel e Djair Maykon \n\nContact:\nherson.reis@ufba.br \n\n Musica do Menu: Ragnarok - Soundtrack Main Theme \n Musica do Jogo: Riders On The Storm - Snoop Dogg ft. The Doors", width * 0.5, height * 0.3);
         
         stroke('#d82b00');
         strokeWeight(2);
